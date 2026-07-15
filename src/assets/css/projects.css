@@ -1,0 +1,64 @@
+.project-panel {
+	display: none;
+}
+
+.project-panel.active {
+	display: block;
+	animation: panelFade 220ms ease;
+}
+
+@keyframes panelFade {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.project-wrap {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	gap: 28px;
+}
+
+.project-wrap img {
+	width: 100%;
+	display: block;
+	border-radius: 10px;
+	border: 1px solid var(--line);
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-title {
+	margin: 0 0 10px;
+	font-family: "Libre Baskerville", serif;
+	font-size: clamp(24px, 2.2vw, 32px);
+}
+
+.project-meta {
+	margin: 0 0 16px;
+	font-size: 13px;
+	line-height: 1.8;
+	color: var(--muted);
+}
+
+.project-copy p,
+.project-copy li {
+	font-size: 14px;
+	line-height: 1.75;
+	color: var(--muted);
+}
+
+.project-copy ul {
+	margin: 0;
+	padding-left: 18px;
+}
+
+@media (max-width: 900px) {
+	.project-wrap {
+		grid-template-columns: 1fr;
+	}
+}

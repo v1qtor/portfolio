@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ title }} - Victor Chukwuma</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="/assets/css/achievements.css" />
+	</head>
+	<body class="achievement-details-page">
+		<main class="achievement-details">
+			<section class="achievement-details-media">
+				<div class="achievement-details-slider swiper">
+					<div class="swiper-wrapper">
+						{%- for slide in slides %}
+						<div class="swiper-slide">
+							<img src="{{ slide.src }}" alt="{{ slide.alt }}" />
+						</div>
+						{%- endfor %}
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</section>
+
+			<section class="achievement-details-content">
+				{{ content | safe }}
+			</section>
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="/assets/js/achievement-details.js"></script>
+	</body>
+</html>

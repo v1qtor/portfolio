@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{ title }} - Victor Chukwuma</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+		{%- for href in pageCdnCss %}
+		<link rel="stylesheet" href="{{ href }}" />
+		{%- endfor %}
+		<link rel="stylesheet" href="/assets/css/style.css" />
+		{%- for href in pageCss %}
+		<link rel="stylesheet" href="{{ href }}" />
+		{%- endfor %}
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon_io/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon_io/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon_io/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+	</head>
+	<body>
+		<div class="mobile-topbar">
+			<h2 class="mobile-logo"><a href="/" aria-label="Go to home page">VICTOR</a></h2>
+			<button id="menuToggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+				<i class="bi bi-list"></i>
+			</button>
+		</div>
+
+		<nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
+			<ul>
+				{%- for item in nav %}
+				<li><a{% if activeNav == item.key %} class="active"{% endif %} href="{{ item.url }}">{{ item.label }}</a></li>
+				{%- endfor %}
+			</ul>
+		</nav>
+
+		<div class="layout">
+			<aside class="sidebar" aria-label="Sidebar navigation">
+				<div class="sidebar-inner">
+					<div class="sidebar-main">
+						<h1 class="logo"><a href="/" aria-label="Go to home page">VICTOR</a></h1>
+						<nav class="sidebar-nav" aria-label="Main navigation">
+							<ul>
+								{%- for item in nav %}
+								<li><a{% if activeNav == item.key %} class="active"{% endif %} href="{{ item.url }}">{{ item.label }}</a></li>
+								{%- endfor %}
+							</ul>
+						</nav>
+					</div>
+					<div class="sidebar-footer">
+						<div class="sidebar-social" aria-label="Social links">
+							<a
+								href="https://www.linkedin.com/in/victorchukwuma/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LinkedIn"
+								><i class="bi bi-linkedin"></i
+							></a>
+							<a
+								href="https://github.com/v1qtor"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="GitHub"
+								><i class="bi bi-github"></i
+							></a>
+						</div>
+						<div>
+							<div>© 2026 Victor</div>
+							<div>Computer Science Portfolio</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+
+			<div class="page">
+				{{ content | safe }}
+			</div>
+		</div>
+
+		<script src="/assets/js/scripts.js"></script>
+		{%- for src in pageScripts %}
+		<script src="{{ src }}"></script>
+		{%- endfor %}
+	</body>
+</html>
