@@ -1,0 +1,398 @@
+/* ================================================
+   About Me — Kioto-inspired layout
+   Based on structural analysis of Kioto's repeated
+   two-column section system, rebuilt for this site.
+   ================================================ */
+
+.content-page {
+	padding-top: 0;
+}
+
+.first-pair-section {
+	margin-top: 100px;
+}
+
+.kioto-pair-section {
+	padding: 0;
+}
+
+.kioto-pair-grid,
+.kioto-divider-block {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.kioto-pair-grid {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.kioto-col {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+.kioto-col-left {
+	padding-right: 50px;
+}
+
+.kioto-col-right {
+	padding-left: 50px;
+}
+
+.kioto-section-title {
+	margin: 0 0 50px;
+	color: var(--accent);
+	font-family: "Syne", sans-serif;
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 1.8;
+	letter-spacing: 5px;
+}
+
+.kioto-copy {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.kioto-copy p {
+	margin: 0;
+	color: #6f6f6f;
+	font-family: "Syne", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.5;
+	overflow-wrap: anywhere;
+	hyphens: auto;
+}
+
+.kioto-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.kioto-list li {
+	position: relative;
+	margin: 0 0 14px;
+	padding-left: 22px;
+	color: #6f6f6f;
+	font-family: "Syne", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.9;
+	overflow-wrap: anywhere;
+}
+
+.kioto-list li:last-child {
+	margin-bottom: 0;
+}
+
+.kioto-list li::before {
+	content: "\2713";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #000000;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.star-list li {
+	padding-left: 24px;
+}
+
+.star-list li::before {
+	content: "✦";
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.arrow-list li {
+	display: list-item;
+	position: static;
+	padding-left: 0;
+	margin-left: 1.1em;
+	list-style: none;
+}
+
+.arrow-list li::before {
+	content: none;
+}
+
+.arrow-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.arrow-list li::marker {
+	content: "►  ";
+	color: #000000;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.core-values-cta {
+	margin-top: 34px;
+	background: #6b6b6b;
+	color: #f6f6f6;
+	border-color: #6b6b6b;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0;
+	text-transform: uppercase;
+	padding: 15px 35px;
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+	align-self: flex-start;
+	transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease,
+		transform 220ms ease, box-shadow 220ms ease;
+}
+
+.core-values-actions {
+	margin-top: 34px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: flex-start;
+}
+
+.core-values-actions .core-values-cta {
+	margin-top: 0;
+}
+
+.core-values-cta::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: #000000;
+	transform: translateY(102%);
+	transition: transform 260ms cubic-bezier(0.22, 0.8, 0.2, 1);
+	z-index: -1;
+}
+
+.core-values-cta:hover {
+	background: #6b6b6b;
+	border-color: #000000;
+	color: #ffffff;
+	transform: translateY(-1px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
+}
+
+.core-values-cta:hover::before {
+	transform: translateY(0);
+}
+
+.kioto-divider-block {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.kioto-divider-line {
+	width: 100%;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.tech-services-block {
+	width: 100%;
+}
+
+.tech-services-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0 40px;
+}
+
+.kioto_tm_service {
+	padding: 45px 50px 42px;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.kioto_tm_service .fn__svg {
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 17px;
+	filter: brightness(0) saturate(100%) invert(57%) sepia(28%) saturate(700%) hue-rotate(5deg) brightness(95%) contrast(90%);
+}
+
+.kioto_tm_service .title {
+	margin: 0 0 8px;
+	font-family: "Syne", sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: var(--accent);
+}
+
+.kioto_tm_service .list ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.kioto_tm_service .list li {
+	margin: 0 0 5px;
+	font-family: "Syne", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.8;
+	color: rgb(118, 118, 118);
+}
+
+.kioto_tm_service .list li:last-child {
+	margin-bottom: 0;
+}
+
+.kioto_tm_service .list li span {
+	display: inline;
+}
+
+@media (max-width: 1200px) {
+	.kioto-pair-grid,
+	.kioto-divider-block {
+		max-width: 900px;
+	}
+
+	.kioto-col-left {
+		padding-right: 34px;
+	}
+
+	.kioto-col-right {
+		padding-left: 34px;
+	}
+
+	.kioto-section-title {
+		font-size: 23px;
+		letter-spacing: 4px;
+	}
+
+	.tech-services-grid {
+		gap: 0 24px;
+	}
+
+	.kioto_tm_service {
+		padding: 38px 34px 34px;
+	}
+}
+
+@media (max-width: 900px) {
+	.kioto-pair-grid,
+	.kioto-divider-block {
+		max-width: 680px;
+	}
+
+	.kioto-col-left {
+		padding-right: 24px;
+	}
+
+	.kioto-col-right {
+		padding-left: 24px;
+	}
+
+	.kioto-section-title {
+		font-size: 21px;
+		margin-bottom: 32px;
+	}
+
+	.kioto-copy {
+		gap: 20px;
+	}
+
+	.kioto-copy p,
+	.kioto-list li {
+		font-size: 19px;
+	}
+
+	.tech-services-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0 20px;
+	}
+
+	.kioto_tm_service {
+		padding: 30px 24px 28px;
+	}
+}
+
+/* Tablet and below: Kioto collapses into stacked columns with gutters removed */
+@media (max-width: 767px) {
+	.first-pair-section {
+		margin-top: 60px;
+	}
+
+	.kioto-pair-grid,
+	.kioto-divider-block {
+		max-width: 560px;
+	}
+
+	.kioto-col {
+		width: 100%;
+	}
+
+	.kioto-col-left {
+		padding-right: 0;
+		margin-bottom: 60px;
+	}
+
+	.kioto-col-right {
+		padding-left: 0;
+	}
+
+	.core-values-cta {
+		align-self: flex-start;
+	}
+
+	.kioto-divider-block {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	.tech-services-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.kioto-section-title {
+		margin-bottom: 24px;
+		font-size: 20px;
+		letter-spacing: 3px;
+		line-height: 1.45;
+	}
+
+	.kioto-copy p,
+	.kioto-list li {
+		font-size: 17px;
+		line-height: 1.75;
+	}
+
+	.kioto-list li {
+		margin-bottom: 10px;
+	}
+
+	.arrow-list li {
+		margin-left: 0.8em;
+	}
+
+	.core-values-cta {
+		padding: 13px 28px;
+		font-size: 14px;
+	}
+
+	.core-values-actions {
+		margin-top: 26px;
+	}
+
+	.kioto_tm_service .title {
+		font-size: 17px;
+	}
+}
