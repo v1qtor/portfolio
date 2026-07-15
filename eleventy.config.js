@@ -2,7 +2,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 	eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
 	eleventyConfig.addPassthroughCopy({
-		"src/assets/images/favicon_io/site.webmanifest": "site.webmanifest"
+		"src/assets/images/favicon/site.webmanifest": "site.webmanifest"
 	});
 
 	return {
