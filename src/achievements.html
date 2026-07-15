@@ -1,0 +1,66 @@
+---
+title: Achievements
+activeNav: achievements
+pageCdnCss:
+  - https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css
+  - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
+pageCss:
+  - /assets/css/achievements.css
+pageScripts:
+  - https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js
+  - /assets/js/achievements.js
+layout: layouts/base.njk
+---
+<main class="content-page">
+	<header class="page-header">
+		<h2>// Certificates &amp; Recognition</h2>
+		<p>These certificates reflect practical growth across data-driven innovation, hospitality operations, team contribution, and cross-functional training.</p>
+	</header>
+
+	<div class="chip-row" role="tablist" aria-label="Filter achievements">
+		<button class="chip filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+		<button class="chip filter-tab" data-filter="academic" role="tab" aria-selected="false">Academic</button>
+		<button class="chip filter-tab" data-filter="professional" role="tab" aria-selected="false">Professional</button>
+	</div>
+
+	<div class="grid-3">
+		<article class="achievement-card" data-category="academic">
+			<a href="/achievements/dentsu-blended-internship/" class="achievement-details-lightbox" data-glightbox="type: external" title="Details">
+					<img src="/assets/images/dentsu-certificate.png" alt="Dentsu Blended Internship Program certificate of achievement">
+				<div class="achievement-overlay">
+					<div class="achievement-info">
+						<h3>Blended Internship Program</h3>
+						<p>Champions — Reimagining Third Spaces</p>
+					</div>
+					<span class="achievement-link-indicator" aria-hidden="true"><i class="bx bx-link"></i></span>
+				</div>
+			</a>
+		</article>
+
+		<article class="achievement-card" data-category="professional">
+			<a href="/achievements/renaissance-covid-support-certificate/" class="achievement-details-lightbox" data-glightbox="type: external" title="Details">
+					<img src="/assets/images/LetterOfAppreciation.jpg" alt="Renaissance COVID support certificate">
+				<div class="achievement-overlay">
+					<div class="achievement-info">
+						<h3>Renaissance Appreciation</h3>
+						<p>COVID-19 Support Recognition</p>
+					</div>
+					<span class="achievement-link-indicator" aria-hidden="true"><i class="bx bx-link"></i></span>
+				</div>
+			</a>
+		</article>
+
+		<article class="achievement-card" data-category="professional">
+			<a href="/achievements/front-office-cross-training-certificate/" class="achievement-details-lightbox" data-glightbox="type: external" title="Details">
+					<img src="/assets/images/FoCrossTraining.jpg" alt="Front office cross training certificate">
+				<div class="achievement-overlay">
+					<div class="achievement-info">
+						<h3>Cross Training Certificate</h3>
+						<p>Front Office Ambassador Track</p>
+					</div>
+					<span class="achievement-link-indicator" aria-hidden="true"><i class="bx bx-link"></i></span>
+				</div>
+			</a>
+		</article>
+	</div>
+</main>

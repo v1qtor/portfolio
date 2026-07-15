@@ -1,0 +1,35 @@
+---
+title: Home
+activeNav: home
+pageCss:
+  - /assets/css/index.css
+pageScripts:
+  - https://code.jquery.com/jquery-3.7.1.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js
+  - /assets/js/home.js
+layout: layouts/base.njk
+---
+<main class="hero">
+	<div id="heroMedia" class="hero-media" data-image="/assets/images/me_compressed.jpg">
+		<div class="hero-media-frame"></div>
+		<div class="hero-media-surface">
+			<div
+				id="heroRippleCard"
+				class="hero-media-ripple"
+				role="img"
+				aria-label="Victor portrait"></div>
+		</div>
+	</div>
+	<div class="hero-content">
+		<div class="hero-copy">
+			<p class="hero-intro">// Victor Chukwuma</p>
+			<h1>
+				<span class="hero-heading-static">Creative Technologist And</span>
+				<span class="hero-heading-rotator"
+					><span id="roleWord" class="role-word">Analyst</span></span
+				>
+			</h1>
+			<a class="btn-primary" href="/aboutme/">About Me</a>
+		</div>
+	</div>
+</main>

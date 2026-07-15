@@ -1,0 +1,13 @@
+# Old .html URLs -> new clean URLs
+/index.html            /                 301
+/aboutme.html          /aboutme/         301
+/projects.html         /projects/        301
+/achievements.html     /achievements/    301
+/internship.html       /internship/      301
+/contact.html          /contact/         301
+/achievement-details/renaissance-covid-support-certificate.html   /achievements/renaissance-covid-support-certificate/   301
+/achievement-details/front-office-cross-training-certificate.html /achievements/front-office-cross-training-certificate/ 301
+/achievement-details/ehg-sports-fest-certificate.html             /achievements/                                         301
+
+# Fallback
+/*    /404.html   404

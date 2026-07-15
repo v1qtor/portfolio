@@ -1,0 +1,137 @@
+---
+title: Projects
+activeNav: projects
+pageCss:
+  - /assets/css/projects.css
+pageScripts:
+  - /assets/js/projects.js
+layout: layouts/base.njk
+---
+<main class="content-page">
+	<header class="page-header">
+		<h2>Projects</h2>
+		<p>These projects reflect how I work: understand the problem clearly, prototype fast, and iterate with evidence. My focus is practical AI, analytics, and software that people can actually use.</p>
+	</header>
+
+	<div class="chip-row" role="tablist" aria-label="Project tabs">
+		<button class="chip active project-tab" data-target="project-rose" role="tab" aria-selected="true">Rose Classifier</button>
+		<button class="chip project-tab" data-target="project-rail" role="tab" aria-selected="false">Rail AI</button>
+		<button class="chip project-tab" data-target="project-job" role="tab" aria-selected="false">Job Training App</button>
+		<button class="chip project-tab" data-target="project-expense" role="tab" aria-selected="false">Expense AI Builder</button>
+		<button class="chip project-tab" data-target="project-schedule" role="tab" aria-selected="false">Schedule System</button>
+		<button class="chip project-tab" data-target="project-flight" role="tab" aria-selected="false">Flight Data Viz</button>
+		<button class="chip project-tab" data-target="project-airbnb" role="tab" aria-selected="false">Airbnb Analytics</button>
+	</div>
+
+	<section id="project-rose" class="project-panel active" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/bigdata.png" alt="Rose classification project">
+			<div class="project-copy card">
+				<h3 class="project-title">Image Classification of Rose Species</h3>
+				<p class="project-meta">Course: Big Data | Team size: 1 | Stack: fastai, PyTorch, Streamlit</p>
+				<p>I built a computer vision pipeline to classify seven rose species and focused on making the model both accurate and usable in a lightweight demo app.</p>
+				<ul>
+					<li>Collected and cleaned labeled image datasets.</li>
+					<li>Compared transfer learning approaches with ResNet and VGG.</li>
+					<li>Published a web demo with a simple inference flow.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-rail" class="project-panel" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/unetmodel.png" alt="Rail anomaly model">
+			<div class="project-copy card">
+				<h3 class="project-title">Rail Track Anomaly Detection</h3>
+				<p class="project-meta">Course: Project 4.0 | Team size: 6 | Stack: U-Net, CNN, YOLOv8</p>
+				<p>In this team project, we built a two-stage AI workflow that segments regions of interest and flags anomalies to support rail maintenance planning.</p>
+				<ul>
+					<li>Contributed to data annotation and model evaluation.</li>
+					<li>Implemented metrics and iterative model tuning.</li>
+					<li>Supported integration into a front-end prototype.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-job" class="project-panel" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/JobApplicationTraining.png" alt="Job training platform">
+			<div class="project-copy card">
+				<h3 class="project-title">Job Application Training Platform</h3>
+				<p class="project-meta">Course: Project PHP | Team size: 4 | Stack: Laravel, MySQL</p>
+				<p>We designed a platform to organize mock interviews at scale, reduce administrative effort, and improve communication between students, coordinators, and recruiters.</p>
+				<ul>
+					<li>Implemented coordinator and company workflows.</li>
+					<li>Built booking and appointment availability modules.</li>
+					<li>Delivered database models and validation rules.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-expense" class="project-panel" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/expenseAppFinal.png" alt="Expense app">
+			<div class="project-copy card">
+				<h3 class="project-title">AI Builder for Expense Notes</h3>
+				<p class="project-meta">Course: Enterprise Content Services | Team size: Individual | Stack: Power Apps, AI Builder, PowerBI</p>
+				<p>I created an automation flow for receipt scanning and structured expense tracking to simplify reimbursements and make reporting more transparent.</p>
+				<ul>
+					<li>Configured data extraction from receipt photos.</li>
+					<li>Integrated form verification and SharePoint persistence.</li>
+					<li>Added dashboard views for monthly and category insights.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-schedule" class="project-panel" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/requirements_analysis.png" alt="Schedule project">
+			<div class="project-copy card">
+				<h3 class="project-title">Household Schedule and Task Management</h3>
+				<p class="project-meta">Course: Requirements Analysis | Team size: 5 | Role: Team lead</p>
+				<p>As team lead, I helped shape a full requirements and prototype package for a shared planner with role-based tasks and clear calendar visibility.</p>
+				<ul>
+					<li>Led stakeholder interviews and requirement mapping.</li>
+					<li>Defined core workflows and non-functional requirements.</li>
+					<li>Produced an analysis package and prototype narrative.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-flight" class="project-panel" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/Data_Viz.png" alt="Flight dashboard">
+			<div class="project-copy card">
+				<h3 class="project-title">Airport Flight Data Analysis</h3>
+				<p class="project-meta">Course: Data Visualization | Team size: Individual | Stack: Qlik Sense</p>
+				<p>I built exploratory and explanatory dashboards on airport operations data to identify delay patterns across airlines, routes, and time windows.</p>
+				<ul>
+					<li>Built multi-dashboard narrative for operational stakeholders.</li>
+					<li>Designed filters for seasonality and route-level analysis.</li>
+					<li>Highlighted actionable opportunities to reduce delays.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="project-airbnb" class="project-panel" role="tabpanel">
+		<div class="project-wrap">
+			<img src="https://lwamt.sinners.be/assets/img/BI_starSchema.png" alt="Airbnb analytics">
+			<div class="project-copy card">
+				<h3 class="project-title">Airbnb Data Analysis</h3>
+				<p class="project-meta">Course: Business Intelligence Project | Team size: Individual | Stack: Qlik Sense</p>
+				<p>This business intelligence project explores market dynamics, affordability, and community impact across Antwerp, Brussels, and Ghent.</p>
+				<ul>
+					<li>Modeled data with a star schema and ETL scripting.</li>
+					<li>Built views for price, ratings, and host behavior.</li>
+					<li>Framed findings around responsible tourism choices.</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</main>
