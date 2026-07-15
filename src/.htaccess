@@ -1,0 +1,11 @@
+ErrorDocument 404 /404.html
+
+# Old .html URLs -> new clean URLs
+Redirect 301 /aboutme.html /aboutme/
+Redirect 301 /projects.html /projects/
+Redirect 301 /achievements.html /achievements/
+Redirect 301 /internship.html /internship/
+Redirect 301 /contact.html /contact/
+Redirect 301 /achievement-details/renaissance-covid-support-certificate.html /achievements/renaissance-covid-support-certificate/
+Redirect 301 /achievement-details/front-office-cross-training-certificate.html /achievements/front-office-cross-training-certificate/
+Redirect 301 /achievement-details/ehg-sports-fest-certificate.html /achievements/
