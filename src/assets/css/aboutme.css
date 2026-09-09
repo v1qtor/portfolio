@@ -99,7 +99,7 @@
 	font-size: 13px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	color: #b8b0a0;
+	color: var(--muted);
 }
 
 .hobby-title {
