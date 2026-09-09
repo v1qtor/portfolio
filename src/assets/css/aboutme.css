@@ -155,15 +155,31 @@
 	line-height: 1.5;
 }
 
+.resume-frame-wrap {
+	max-width: 700px;
+	margin: 0 auto;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 6px;
+	overflow: hidden;
+	background: #ffffff;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
 .resume-frame {
-	width: 100%;
-	height: 720px;
 	display: block;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	width: 100%;
+	aspect-ratio: 8.5 / 11;
+	border: none;
+}
+
+.resume-actions {
+	margin-top: 28px;
+	display: flex;
+	justify-content: center;
 }
 
 .resume-cta {
-	margin-top: 28px;
+	margin-top: 0;
 	background: #6b6b6b;
 	color: #f6f6f6;
 	border-color: #6b6b6b;
@@ -227,10 +243,6 @@
 	.resume-intro {
 		font-size: 19px;
 	}
-
-	.resume-frame {
-		height: 600px;
-	}
 }
 
 @media (max-width: 767px) {
@@ -273,10 +285,6 @@
 
 	.hobby-desc {
 		font-size: 15px;
-	}
-
-	.resume-frame {
-		height: 460px;
 	}
 
 	.resume-cta {
