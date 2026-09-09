@@ -1,0 +1,44 @@
+[
+	{
+		"id": "dentsu",
+		"issuer": "Dentsu — Blended Internship Program",
+		"title": "Blended Internship Program",
+		"subtitle": "Champions — Reimagining Third Spaces",
+		"images": [
+			{ "src": "/assets/images/achievements/dentsu/certificate.jpg", "alt": "Dentsu Blended Internship Program certificate of achievement" },
+			{ "src": "/assets/images/achievements/dentsu/award-plaque.jpg", "alt": "Champions award plaque from the Blended Internship Program" },
+			{ "src": "/assets/images/achievements/dentsu/team-photo-1.jpeg", "alt": "Team photo at the Blended Internship Program in Breda" },
+			{ "src": "/assets/images/achievements/dentsu/team-photo-2.jpeg", "alt": "Team celebrating at the Blended Internship Program" }
+		],
+		"summary": "This certificate of achievement from <strong>Dentsu</strong> recognizes my team winning the <strong>Blended Internship Program</strong>, an international exchange hosted at <strong>Breda University of Applied Sciences</strong> in the Netherlands, themed <em>Reimagining Third Spaces</em>.",
+		"context": "<p>The challenge was to use <strong>data-driven development</strong> to rethink third spaces — the places beyond home and work or school where community actually happens. Digging into the data, our team landed on a real tension: children are getting smartphones at <strong>ever younger ages</strong>, and screen time is steadily displacing the <strong>face-to-face play and interaction</strong> those spaces exist for.</p><p>Rather than fighting the phone, we flipped it into the solution. We designed <strong>QuestSpace</strong>, a mobile app concept that uses the device already in kids' hands to <strong>pull them outside</strong> — turning parks, squares, and other third spaces into playable quests that reward real-world exploration and getting together in person. We took it from data analysis to problem framing, through ideation, and into a working <strong>prototype</strong>.</p>",
+		"representation": "<p>Our group finished as <strong>champions</strong> of the program. For me, this achievement captures the full arc I want my work to follow: start from <strong>evidence</strong>, frame a problem that genuinely matters, and turn it into a <strong>customer-centered product</strong> — delivered with an international team under a fast-paced format.</p>"
+	},
+	{
+		"id": "renaissance",
+		"issuer": "Renaissance Downtown Dubai",
+		"title": "Renaissance Appreciation",
+		"subtitle": "COVID-19 Support Recognition",
+		"images": [
+			{ "src": "/assets/images/achievements/renaissance/letter-of-appreciation.jpg", "alt": "Renaissance certificate of appreciation" },
+			{ "src": "/assets/images/achievements/renaissance/team.jpg", "alt": "Renaissance COVID support team photo" }
+		],
+		"summary": "This certificate was awarded for <strong>sustained contribution</strong> during the COVID-19 period at Renaissance Downtown Hotel, Dubai.",
+		"context": "<p>I was part of a <strong>small, selected team</strong> entrusted with helping manage operations during an unconventional period. As conditions evolved rapidly, we frequently had to step beyond our formal job scope, and <strong>adapt</strong> workflows in real time to maintain service standards and keep the business running effectively.</p>",
+		"representation": "<p>This recognition represents <strong>resilience</strong>, <strong>composure</strong>, and <strong>ownership under pressure</strong>.</p>"
+	},
+	{
+		"id": "frontoffice",
+		"issuer": "Renaissance Downtown Dubai",
+		"title": "Cross Training Certificate",
+		"subtitle": "Front Office Ambassador Track",
+		"images": [
+			{ "src": "/assets/images/achievements/front-office/certificate.jpg", "alt": "Cross training certificate" },
+			{ "src": "/assets/images/achievements/front-office/front-office.jpg", "alt": "Front office cross training photo" },
+			{ "src": "/assets/images/achievements/front-office/food-and-beverage.jpg", "alt": "Food and beverage service photo" }
+		],
+		"summary": "This certificate confirms completion of <strong>training</strong> in the Front Office Department as a <strong>Front Office Ambassador</strong>.",
+		"context": "<p>As the <strong>first point of contact</strong> for guests, the training centered on maintaining <strong>brand standards</strong>, anticipating guest needs, and delivering a consistently high level of customer satisfaction. It was also a masterclass in communication, as the role required daily interaction with <strong>high-profile guests</strong> while handling service with discretion, confidence, and professionalism.</p>",
+		"representation": "<p>This certificate reflects <strong>continuous learning</strong> and upward growth. I initially joined Renaissance in the F&amp;B department, and after completing this training I was promoted into the Front Office team. For me, it represents <strong>trust earned through performance</strong>, and the ability to grow into more demanding responsibilities.</p>"
+	}
+]

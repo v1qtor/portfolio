@@ -1,66 +1,49 @@
 ---
 title: Achievements
 activeNav: achievements
-pageCdnCss:
-  - https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css
-  - https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css
 pageCss:
   - /assets/css/achievements.css
 pageScripts:
-  - https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js
   - /assets/js/achievements.js
 layout: layouts/base.njk
 ---
 <main class="content-page">
 	<header class="page-header">
-		<h2>// Certificates &amp; Recognition</h2>
+		<h2>// Highlights</h2>
 		<p>These certificates reflect practical growth across data-driven innovation, hospitality operations, team contribution, and cross-functional training.</p>
 	</header>
 
-	<div class="chip-row" role="tablist" aria-label="Filter achievements">
-		<button class="chip filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-		<button class="chip filter-tab" data-filter="academic" role="tab" aria-selected="false">Academic</button>
-		<button class="chip filter-tab" data-filter="professional" role="tab" aria-selected="false">Professional</button>
+	<div class="achievement-list">
+		{% for a in achievements %}
+		<article class="achievement-row">
+			<button type="button" class="achievement-thumb" data-id="{{ a.id }}" aria-label="View full-size {{ a.title }} photos">
+				<img src="{{ a.images[0].src }}" alt="" />
+			</button>
+			<div class="achievement-row-body">
+				<p class="achievement-issuer">{{ a.issuer }}</p>
+				<h3 class="achievement-title">{{ a.title }}</h3>
+				<p class="achievement-subtitle">{{ a.subtitle }}</p>
+			</div>
+		</article>
+		{% endfor %}
 	</div>
 
-	<div class="grid-3">
-		<article class="achievement-card" data-category="academic">
-			<a href="/achievements/dentsu-blended-internship/" class="achievement-details-lightbox" data-glightbox="type: external" title="Details">
-					<img src="/assets/images/achievements/dentsu/certificate.jpg" alt="Dentsu Blended Internship Program certificate of achievement">
-				<div class="achievement-overlay">
-					<div class="achievement-info">
-						<h3>Blended Internship Program</h3>
-						<p>Champions — Reimagining Third Spaces</p>
-					</div>
-					<span class="achievement-link-indicator" aria-hidden="true"><i class="bx bx-link"></i></span>
-				</div>
-			</a>
-		</article>
-
-		<article class="achievement-card" data-category="professional">
-			<a href="/achievements/renaissance-covid-support-certificate/" class="achievement-details-lightbox" data-glightbox="type: external" title="Details">
-					<img src="/assets/images/achievements/renaissance/letter-of-appreciation.jpg" alt="Renaissance COVID support certificate">
-				<div class="achievement-overlay">
-					<div class="achievement-info">
-						<h3>Renaissance Appreciation</h3>
-						<p>COVID-19 Support Recognition</p>
-					</div>
-					<span class="achievement-link-indicator" aria-hidden="true"><i class="bx bx-link"></i></span>
-				</div>
-			</a>
-		</article>
-
-		<article class="achievement-card" data-category="professional">
-			<a href="/achievements/front-office-cross-training-certificate/" class="achievement-details-lightbox" data-glightbox="type: external" title="Details">
-					<img src="/assets/images/achievements/front-office/certificate.jpg" alt="Front office cross training certificate">
-				<div class="achievement-overlay">
-					<div class="achievement-info">
-						<h3>Cross Training Certificate</h3>
-						<p>Front Office Ambassador Track</p>
-					</div>
-					<span class="achievement-link-indicator" aria-hidden="true"><i class="bx bx-link"></i></span>
-				</div>
-			</a>
-		</article>
+	<div id="achievementModal" class="achievement-modal" hidden>
+		<div class="achievement-modal-backdrop" data-close></div>
+		<div class="achievement-modal-panel" role="dialog" aria-modal="true" aria-labelledby="achievementModalTitle">
+			<button type="button" class="achievement-modal-close" data-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
+			<div class="achievement-modal-media">
+				<button type="button" class="achievement-modal-nav achievement-modal-prev" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
+				<img id="achievementModalImage" class="achievement-modal-img" src="" alt="" />
+				<button type="button" class="achievement-modal-nav achievement-modal-next" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+			</div>
+			<div class="achievement-modal-text">
+				<p class="achievement-issuer" id="achievementModalIssuer"></p>
+				<h3 class="achievement-title" id="achievementModalTitle"></h3>
+				<div class="achievement-modal-body" id="achievementModalBody"></div>
+			</div>
+		</div>
 	</div>
+
+	<script type="application/json" id="achievementsData">{{ achievements | dump | safe }}</script>
 </main>
