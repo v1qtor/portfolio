@@ -4,6 +4,7 @@ activeNav: about
 pageCss:
   - /assets/css/aboutme.css
 pageScripts:
+  - https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js
   - /assets/js/aboutme.js
 layout: layouts/base.njk
 ---
@@ -93,7 +94,8 @@ layout: layouts/base.njk
 			<h2 class="kioto-section-title">// Resume</h2>
 			<p class="resume-intro">A closer look at my education, skills, and the projects that have prepared me for this field.</p>
 			<div class="resume-frame-wrap">
-				<iframe title="Resume preview" src="/assets/files/cv.pdf#toolbar=0&navpanes=0&view=FitH" class="resume-frame"></iframe>
+				<canvas id="resumeCanvas" class="resume-canvas" role="img" aria-label="Resume preview"></canvas>
+				<p id="resumeFallback" class="resume-fallback" hidden>Preview unavailable — <a href="/assets/files/cv.pdf" target="_blank" rel="noopener noreferrer">open the PDF directly</a>.</p>
 			</div>
 			<div class="resume-actions">
 				<a class="btn-primary resume-cta" href="/assets/files/cv.pdf" download>Download Resume</a>

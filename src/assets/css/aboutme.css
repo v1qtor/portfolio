@@ -165,11 +165,19 @@
 	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
 
-.resume-frame {
+.resume-canvas {
 	display: block;
 	width: 100%;
-	aspect-ratio: 8.5 / 11;
-	border: none;
+	height: auto;
+}
+
+.resume-fallback {
+	margin: 0;
+	padding: 60px 24px;
+	text-align: center;
+	font-family: "Syne", sans-serif;
+	font-size: 15px;
+	color: var(--muted);
 }
 
 .resume-actions {
