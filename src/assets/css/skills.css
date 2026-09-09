@@ -2,33 +2,8 @@
    Skills — split out of the About Me Kioto layout
    ================================================ */
 
-.content-page {
-	padding-top: 0;
-}
-
-.first-pair-section {
-	margin-top: 100px;
-}
-
-.kioto-pair-section {
-	padding: 0;
-}
-
-.kioto-section-title {
-	margin: 0 0 50px;
-	color: var(--accent);
-	font-family: "Syne", sans-serif;
-	font-size: 25px;
-	font-weight: 700;
-	text-transform: uppercase;
-	line-height: 1.8;
-	letter-spacing: 5px;
-}
-
 .tech-services-block {
 	width: 100%;
-	max-width: 960px;
-	margin: 0 auto;
 }
 
 .tech-services-grid {
@@ -84,11 +59,6 @@
 }
 
 @media (max-width: 1200px) {
-	.kioto-section-title {
-		font-size: 23px;
-		letter-spacing: 4px;
-	}
-
 	.tech-services-grid {
 		gap: 0 24px;
 	}
@@ -99,11 +69,6 @@
 }
 
 @media (max-width: 900px) {
-	.kioto-section-title {
-		font-size: 21px;
-		margin-bottom: 32px;
-	}
-
 	.tech-services-grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0 20px;
@@ -115,23 +80,12 @@
 }
 
 @media (max-width: 767px) {
-	.first-pair-section {
-		margin-top: 60px;
-	}
-
 	.tech-services-grid {
 		grid-template-columns: 1fr;
 	}
 }
 
 @media (max-width: 560px) {
-	.kioto-section-title {
-		margin-bottom: 24px;
-		font-size: 20px;
-		letter-spacing: 3px;
-		line-height: 1.45;
-	}
-
 	.kioto_tm_service .title {
 		font-size: 17px;
 	}

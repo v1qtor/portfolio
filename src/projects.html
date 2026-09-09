@@ -8,36 +8,38 @@ pageCss:
 layout: layouts/base.njk
 ---
 <main class="content-page">
-	<header class="projects-header">
-		<h2>Projects</h2>
-		<span class="projects-count">{{ projects.length }} Projects</span>
+	<header class="page-header">
+		<h2>// Projects</h2>
+		<p>{{ projects.length }} projects that reflect how I work: understand the problem clearly, prototype fast, and iterate with evidence. My focus is practical AI, analytics, and software that people can actually use.</p>
 	</header>
 
-	{% for p in projects %}
-	<article class="project-row">
-		<div class="project-index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div>
-		<div class="project-main">
-			<div class="project-heading">
-				<h3 class="project-title">{{ p.title }}</h3>
-				<span class="project-type">{{ p.type }}</span>
+	<div class="project-list">
+		{% for p in projects %}
+		<article class="project-row">
+			<div class="project-index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</div>
+			<div class="project-main">
+				<div class="project-heading">
+					<h3 class="project-title">{{ p.title }}</h3>
+					<span class="project-type">{{ p.type }}</span>
+				</div>
+				<p class="project-summary">{{ p.summary }}</p>
+				<div class="project-tags">
+					{% for tag in p.tags %}
+					<span class="project-tag">{{ tag }}</span>
+					{% endfor %}
+				</div>
 			</div>
-			<p class="project-summary">{{ p.summary }}</p>
-			<div class="project-tags">
-				{% for tag in p.tags %}
-				<span class="project-tag">{{ tag }}</span>
-				{% endfor %}
+			<div class="project-side">
+				<span class="project-year">{{ p.year }}</span>
+				<div class="project-links">
+					<a href="{{ p.githubUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-github"></i>GitHub</a>
+					<a href="{{ p.liveUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-box-arrow-up-right"></i>Live</a>
+				</div>
+				<div class="project-thumb" style="background-image:url('/assets/images/projects/{{ p.slug }}/thumbnail.jpg')">
+					<span class="project-thumb-label">Thumbnail</span>
+				</div>
 			</div>
-		</div>
-		<div class="project-side">
-			<span class="project-year">{{ p.year }}</span>
-			<div class="project-links">
-				<a href="{{ p.githubUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-github"></i>GitHub</a>
-				<a href="{{ p.liveUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-box-arrow-up-right"></i>Live</a>
-			</div>
-			<div class="project-thumb" style="background-image:url('/assets/images/projects/{{ p.slug }}/thumbnail.jpg')">
-				<span class="project-thumb-label">Thumbnail</span>
-			</div>
-		</div>
-	</article>
-	{% endfor %}
+		</article>
+		{% endfor %}
+	</div>
 </main>
