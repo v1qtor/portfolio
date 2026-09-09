@@ -30,13 +30,15 @@ layout: layouts/base.njk
 				</div>
 			</div>
 			<div class="project-side">
-				<span class="project-year">{{ p.year }}</span>
+				<div class="project-meta-row">
+					<span class="project-year">{{ p.year }}</span>
+					<div class="project-thumb" style="background-image:url('/assets/images/projects/{{ p.slug }}/thumbnail.jpg')">
+						<span class="project-thumb-label">Thumbnail</span>
+					</div>
+				</div>
 				<div class="project-links">
 					<a href="{{ p.githubUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-github"></i>GitHub</a>
 					<a href="{{ p.liveUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-box-arrow-up-right"></i>Live</a>
-				</div>
-				<div class="project-thumb" style="background-image:url('/assets/images/projects/{{ p.slug }}/thumbnail.jpg')">
-					<span class="project-thumb-label">Thumbnail</span>
 				</div>
 			</div>
 		</article>
