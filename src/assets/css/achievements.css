@@ -96,7 +96,7 @@
 
 .achievement-modal-panel {
 	position: relative;
-	max-width: 920px;
+	max-width: 1100px;
 	width: 100%;
 	max-height: 90vh;
 	overflow-y: auto;
@@ -125,10 +125,10 @@
 }
 
 .achievement-modal-media {
-	flex: 1 1 480px;
+	flex: 1 1 560px;
 	min-width: 280px;
 	position: relative;
-	background: #fafaf8;
+	background: #fbf9f4;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -136,10 +136,10 @@
 
 .achievement-modal-img {
 	width: 100%;
-	height: min(70vh, 600px);
+	height: min(75vh, 680px);
 	object-fit: contain;
 	display: block;
-	background: #ffffff;
+	background: #fbf9f4;
 }
 
 .achievement-modal-nav {
@@ -172,29 +172,35 @@
 }
 
 .achievement-modal-text {
-	flex: 1 1 280px;
-	min-width: 260px;
-	padding: 32px 30px;
+	flex: 1 1 340px;
+	min-width: 280px;
+	padding: 48px 44px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
+.achievement-modal-text .achievement-title {
+	font-size: 26px;
+}
+
 .achievement-modal-body p {
-	margin: 0 0 16px;
-	font-size: 14px;
+	margin: 0 0 18px;
+	font-size: 15px;
 	line-height: 1.8;
 	color: var(--muted);
 }
 
 .achievement-modal-body h4 {
-	margin: 16px 0 10px;
+	margin: 26px 0 10px;
 	font-family: "Syne", sans-serif;
-	font-size: 13px;
+	font-size: 19px;
 	font-weight: 700;
-	letter-spacing: 1.6px;
-	text-transform: uppercase;
-	color: var(--accent);
+	color: var(--text);
+}
+
+.achievement-modal-body h4:first-of-type {
+	margin-top: 22px;
 }
 
 @media (max-width: 1100px) {
@@ -225,5 +231,13 @@
 
 	.achievement-modal-img {
 		height: 50vh;
+	}
+
+	.achievement-modal-text {
+		padding: 30px 26px;
+	}
+
+	.achievement-modal-text .achievement-title {
+		font-size: 22px;
 	}
 }
