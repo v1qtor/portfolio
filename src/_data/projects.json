@@ -1,0 +1,72 @@
+[
+	{
+		"slug": "rose",
+		"type": "Web App",
+		"title": "Image Classification of Rose Species",
+		"summary": "A computer vision pipeline classifying seven rose species with transfer learning, shipped as a lightweight demo app.",
+		"tags": ["Python", "fastai", "PyTorch", "Streamlit"],
+		"year": "2025",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
+		"slug": "rail",
+		"type": "Team Project",
+		"title": "Rail Track Anomaly Detection",
+		"summary": "A two-stage AI workflow segmenting regions of interest and flagging anomalies to support rail maintenance planning.",
+		"tags": ["U-Net", "CNN", "YOLOv8"],
+		"year": "2025",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
+		"slug": "job",
+		"type": "Web App",
+		"title": "Job Application Training Platform",
+		"summary": "A platform organizing mock interviews at scale, reducing admin effort between students, coordinators, and recruiters.",
+		"tags": ["Laravel", "MySQL"],
+		"year": "2024",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
+		"slug": "expense",
+		"type": "Automation",
+		"title": "AI Builder for Expense Notes",
+		"summary": "An automation flow scanning receipts into structured expense tracking, simplifying reimbursements and reporting.",
+		"tags": ["Power Apps", "AI Builder", "PowerBI"],
+		"year": "2024",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
+		"slug": "schedule",
+		"type": "Team Lead",
+		"title": "Household Schedule and Task Management",
+		"summary": "A shared planner with role-based tasks and calendar visibility, from stakeholder interviews to a full prototype.",
+		"tags": ["Requirements Analysis"],
+		"year": "2024",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
+		"slug": "flight",
+		"type": "Data Viz",
+		"title": "Airport Flight Data Analysis",
+		"summary": "Exploratory dashboards surfacing delay patterns across airlines, routes, and time windows.",
+		"tags": ["Qlik Sense"],
+		"year": "2023",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
+		"slug": "airbnb",
+		"type": "Data Viz",
+		"title": "Airbnb Data Analysis",
+		"summary": "A BI project exploring market dynamics and community impact across Antwerp, Brussels, and Ghent.",
+		"tags": ["Qlik Sense", "ETL"],
+		"year": "2023",
+		"githubUrl": "#",
+		"liveUrl": "#"
+	}
+]
