@@ -96,10 +96,9 @@
 	font-size: 14px;
 	font-weight: 700;
 	color: var(--text);
+	text-transform: uppercase;
+	letter-spacing: 0.2px;
 	line-height: 1.35;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .projects-nav-item-type {
