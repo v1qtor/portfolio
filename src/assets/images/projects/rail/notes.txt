@@ -1,0 +1,9 @@
+Rail Track Anomaly Detection
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (diagram): Pipeline architecture — segmentation to detection
+- 2.jpg (screenshot): U-Net segmentation output
+- 3.jpg (screenshot): YOLOv8 anomaly detections on track imagery
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

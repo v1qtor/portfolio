@@ -1,71 +1,161 @@
 [
 	{
-		"slug": "rose",
-		"type": "Web App",
-		"title": "Image Classification of Rose Species",
-		"summary": "A computer vision pipeline classifying seven rose species with transfer learning, shipped as a lightweight demo app.",
-		"tags": ["Python", "fastai", "PyTorch", "Streamlit"],
-		"year": "2025",
+		"slug": "schedule",
+		"type": "Requirements Analysis",
+		"title": "Anderson Household Task Management",
+		"year": "2023",
+		"summary": "A requirements analysis and prototype for a web application to manage schedules, tasks, invoices, and meals for the Anderson household — replacing a disorganized mix of paper notes and online tools.",
+		"tags": ["Requirements Analysis", "UML", "Figma", "Web App", "Team Lead"],
+		"problem": "The Anderson household's au pair managed everything manually — cooking schedules, bill payments, task delegation — across a fragmented mix of paper notes and unrelated apps. Multiple users with different roles needed to access and update shared information without stepping on each other's changes. The existing approach caused confusion, missed tasks, and an unnecessarily heavy workload.",
+		"approach": "Led a team of 5 through a full requirements analysis cycle: stakeholder interviews, use-case modeling, functional and non-functional requirements capture, and prototype development. Produced a UML use-case diagram mapping actors (Family, Employee, Au Pair, Grandson, Staff) to system functions. Built interactive wireframes in Figma covering the calendar, to-do list, invoice management, and meal planning modules. Applied MoSCoW prioritization to scope the MVP against a fixed academic deadline.",
+		"outcome": "Delivered a fully documented requirements specification and a clickable Figma prototype that met all client expectations. The prototype demonstrated how a single central system could reduce the au pair's administrative workload by consolidating five separate tools into one. Received highest marks in the Requirements Analysis course module.",
+		"highlights": [
+			"UML use-case diagram with 5 actor types and 12 system functions",
+			"MoSCoW-prioritized functional and non-functional requirements",
+			"Figma prototype: calendar, to-do list, invoice, and meal modules",
+			"Team lead: coordinated 5 members across analysis and design phases",
+			"Non-functional requirements: usability, security, performance, reliability"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "diagram", "caption": "UML use-case diagram — actors and system functions" },
+			{ "file": "2.jpg", "kind": "wireframe", "caption": "Calendar and to-do module wireframes" },
+			{ "file": "3.jpg", "kind": "wireframe", "caption": "Invoice management module — prototype screen" },
+			{ "file": "4.jpg", "kind": "screenshot", "caption": "Meal planning module — final Figma prototype" }
+		],
 		"githubUrl": "#",
-		"liveUrl": "#"
+		"liveUrl": null
 	},
 	{
 		"slug": "rail",
-		"type": "Team Project",
+		"type": "AI / Computer Vision",
 		"title": "Rail Track Anomaly Detection",
+		"year": "2024",
 		"summary": "A two-stage AI workflow segmenting regions of interest and flagging anomalies to support rail maintenance planning.",
-		"tags": ["U-Net", "CNN", "YOLOv8"],
-		"year": "2025",
+		"tags": ["U-Net", "CNN", "YOLOv8", "Team Project"],
+		"problem": "Manual rail inspection is labor-intensive and inconsistent, and subtle track defects can go unnoticed until they become safety risks.",
+		"approach": "Designed a two-stage pipeline as part of a team project: a U-Net model segments regions of interest along the track, then a CNN/YOLOv8 stage flags likely anomalies within those regions for review.",
+		"outcome": "Delivered a working anomaly-flagging pipeline that demonstrates how computer vision can support maintenance planning and reduce reliance on manual visual inspection.",
+		"highlights": [
+			"Two-stage segmentation + detection pipeline",
+			"U-Net region-of-interest segmentation",
+			"YOLOv8 anomaly flagging",
+			"Collaborative team delivery"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "diagram", "caption": "Pipeline architecture — segmentation to detection" },
+			{ "file": "2.jpg", "kind": "screenshot", "caption": "U-Net segmentation output" },
+			{ "file": "3.jpg", "kind": "screenshot", "caption": "YOLOv8 anomaly detections on track imagery" }
+		],
 		"githubUrl": "#",
-		"liveUrl": "#"
+		"liveUrl": null
 	},
 	{
-		"slug": "job",
-		"type": "Web App",
-		"title": "Job Application Training Platform",
-		"summary": "A platform organizing mock interviews at scale, reducing admin effort between students, coordinators, and recruiters.",
-		"tags": ["Laravel", "MySQL"],
+		"slug": "airbnb",
+		"type": "Business Intelligence",
+		"title": "Airbnb Data Analysis",
 		"year": "2024",
+		"summary": "A BI project exploring market dynamics and community impact across Antwerp, Brussels, and Ghent.",
+		"tags": ["Qlik Sense", "ETL", "Business Intelligence"],
+		"problem": "Understanding Airbnb's market dynamics and community impact across three Belgian cities required consolidating scattered, inconsistent listing and booking data.",
+		"approach": "Built an ETL pipeline to clean and merge listing data, then designed Qlik Sense dashboards comparing pricing, availability, and neighborhood-level density across Antwerp, Brussels, and Ghent.",
+		"outcome": "Delivered a BI dashboard that surfaced city-level market and community trends, supporting clearer discussion of short-term rental impact.",
+		"highlights": [
+			"ETL pipeline for multi-city listing data",
+			"Qlik Sense comparative dashboards",
+			"Three-city market and community analysis"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "diagram", "caption": "ETL pipeline overview" },
+			{ "file": "2.jpg", "kind": "screenshot", "caption": "Qlik Sense dashboard — pricing and density by city" }
+		],
+		"githubUrl": "#",
+		"liveUrl": null
+	},
+	{
+		"slug": "rose",
+		"type": "Machine Learning",
+		"title": "Image Classification of Rose Species",
+		"year": "2023",
+		"summary": "A computer vision pipeline classifying seven rose species with transfer learning, shipped as a lightweight demo app.",
+		"tags": ["Python", "fastai", "PyTorch", "Streamlit"],
+		"problem": "Manually identifying rose species from photos is slow and requires botanical expertise most people don't have.",
+		"approach": "Built a transfer-learning image classifier over seven rose species using fastai/PyTorch on a curated, augmented dataset, then wrapped it in a Streamlit demo for quick, interactive testing.",
+		"outcome": "Delivered a working demo achieving strong classification accuracy across species, showing how transfer learning shortens the path from dataset to usable tool.",
+		"highlights": [
+			"7-species image classifier",
+			"Transfer learning on a pretrained CNN",
+			"Data augmentation pipeline",
+			"Interactive Streamlit demo app"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "screenshot", "caption": "Streamlit demo — species prediction" },
+			{ "file": "2.jpg", "kind": "diagram", "caption": "Model training pipeline" }
+		],
 		"githubUrl": "#",
 		"liveUrl": "#"
 	},
 	{
 		"slug": "expense",
-		"type": "Automation",
+		"type": "Generative AI / Automation",
 		"title": "AI Builder for Expense Notes",
+		"year": "2024",
 		"summary": "An automation flow scanning receipts into structured expense tracking, simplifying reimbursements and reporting.",
 		"tags": ["Power Apps", "AI Builder", "PowerBI"],
-		"year": "2024",
-		"githubUrl": "#",
-		"liveUrl": "#"
-	},
-	{
-		"slug": "schedule",
-		"type": "Team Lead",
-		"title": "Household Schedule and Task Management",
-		"summary": "A shared planner with role-based tasks and calendar visibility, from stakeholder interviews to a full prototype.",
-		"tags": ["Requirements Analysis"],
-		"year": "2024",
-		"githubUrl": "#",
-		"liveUrl": "#"
+		"problem": "Employees manually re-typed receipt data into spreadsheets for reimbursement, which was slow and error-prone.",
+		"approach": "Built an AI Builder automation flow to scan and extract receipt fields automatically, feeding structured data into a Power BI reporting layer.",
+		"outcome": "Simplified reimbursement submission and reporting by removing manual data entry from the process.",
+		"highlights": [
+			"AI Builder receipt scanning",
+			"Power Apps flow automation",
+			"PowerBI reporting integration"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "wireframe", "caption": "Power Apps submission flow" },
+			{ "file": "2.jpg", "kind": "screenshot", "caption": "PowerBI reporting dashboard" }
+		],
+		"githubUrl": null,
+		"liveUrl": null
 	},
 	{
 		"slug": "flight",
-		"type": "Data Viz",
+		"type": "Data Analysis",
 		"title": "Airport Flight Data Analysis",
+		"year": "2023",
 		"summary": "Exploratory dashboards surfacing delay patterns across airlines, routes, and time windows.",
 		"tags": ["Qlik Sense"],
-		"year": "2023",
+		"problem": "Airlines and analysts lacked a quick way to see delay patterns across routes, carriers, and time windows.",
+		"approach": "Built exploratory Qlik Sense dashboards breaking down delays by airline, route, and time window for fast comparison.",
+		"outcome": "Delivered dashboards that made delay patterns visible at a glance, supporting faster root-cause discussion.",
+		"highlights": [
+			"Qlik Sense dashboarding",
+			"Multi-dimension delay analysis",
+			"Airline / route / time breakdowns"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "screenshot", "caption": "Delay analysis dashboard" }
+		],
 		"githubUrl": "#",
-		"liveUrl": "#"
+		"liveUrl": null
 	},
 	{
-		"slug": "airbnb",
-		"type": "Data Viz",
-		"title": "Airbnb Data Analysis",
-		"summary": "A BI project exploring market dynamics and community impact across Antwerp, Brussels, and Ghent.",
-		"tags": ["Qlik Sense", "ETL"],
-		"year": "2023",
+		"slug": "job",
+		"type": "AI / NLP",
+		"title": "Job Application Training Assistant",
+		"year": "2024",
+		"summary": "A platform organizing mock interviews at scale, reducing admin effort between students, coordinators, and recruiters.",
+		"tags": ["Laravel", "MySQL"],
+		"problem": "Coordinating mock interviews between students, coordinators, and recruiters involved heavy manual scheduling and admin work.",
+		"approach": "Built a Laravel/MySQL platform to schedule, track, and manage mock interview sessions at scale, replacing manual coordination.",
+		"outcome": "Delivered a live platform that cut scheduling admin time and gave coordinators a single system to manage sessions end-to-end.",
+		"highlights": [
+			"Laravel/MySQL scheduling platform",
+			"Role-based access for students, coordinators, recruiters",
+			"End-to-end session tracking"
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "wireframe", "caption": "Session scheduling screen" },
+			{ "file": "2.jpg", "kind": "screenshot", "caption": "Coordinator dashboard" }
+		],
 		"githubUrl": "#",
 		"liveUrl": "#"
 	}

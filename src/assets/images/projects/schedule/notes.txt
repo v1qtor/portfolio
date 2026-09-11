@@ -1,0 +1,10 @@
+Anderson Household Task Management
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (diagram): UML use-case diagram — actors and system functions
+- 2.jpg (wireframe): Calendar and to-do module wireframes
+- 3.jpg (wireframe): Invoice management module — prototype screen
+- 4.jpg (screenshot): Meal planning module — final Figma prototype
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

@@ -1,0 +1,8 @@
+AI Builder for Expense Notes
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (wireframe): Power Apps submission flow
+- 2.jpg (screenshot): PowerBI reporting dashboard
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

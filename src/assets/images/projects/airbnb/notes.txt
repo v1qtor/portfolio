@@ -1,0 +1,8 @@
+Airbnb Data Analysis
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (diagram): ETL pipeline overview
+- 2.jpg (screenshot): Qlik Sense dashboard — pricing and density by city
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

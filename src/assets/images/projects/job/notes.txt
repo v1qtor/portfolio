@@ -1,0 +1,8 @@
+Job Application Training Assistant
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (wireframe): Session scheduling screen
+- 2.jpg (screenshot): Coordinator dashboard
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

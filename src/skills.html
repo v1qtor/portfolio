@@ -1,100 +1,187 @@
 ---
-title: Skills
+title: Experience & Skills
 activeNav: skills
 pageCss:
   - /assets/css/skills.css
 layout: layouts/base.njk
 ---
 <main class="content-page">
-	<header class="page-header">
-		<h2>// Technical Skills</h2>
-		<p>The tools and technologies I reach for across frontend, backend, data, and infrastructure work.</p>
-	</header>
+	<div class="skills-content">
 
-	<section>
-		<div class="tech-services-block">
-			<div class="tech-services-grid">
-				<div class="kioto_tm_service">
-					<img class="fn__svg" src="/assets/images/icons/skill-frontend.svg" alt="Frontend Engineering icon" width="40" height="40" />
-					<h3 class="title">Frontend Engineering</h3>
-					<div class="list">
-						<ul>
-							<li><span>React</span></li>
-							<li><span>JavaScript</span></li>
-							<li><span>Tailwind CSS</span></li>
-							<li><span>Alpine.js</span></li>
-							<li><span>Livewire</span></li>
-						</ul>
+		<section class="first-pair-section">
+			<h2 class="kioto-section-title">// Work Experience</h2>
+			<div class="experience-list">
+
+				<article class="experience-card">
+					<div class="experience-header">
+						<h3 class="experience-role">Full-Stack Web Developer (Contract) <span class="experience-company">— Deerfield Property Holdings LLC</span></h3>
+						<span class="experience-dates">Jul 2026 – Present</span>
 					</div>
-				</div>
-
-				<div class="kioto_tm_service">
-					<img class="fn__svg" src="/assets/images/icons/skill-backend.svg" alt="Backend & Architecture icon" width="40" height="40" />
-					<h3 class="title">Backend &amp; Architecture</h3>
-					<div class="list">
-						<ul>
-							<li><span>Java</span></li>
-							<li><span>Spring Boot</span></li>
-							<li><span>.NET Framework</span></li>
-							<li><span>FastAPI</span></li>
-							<li><span>Laravel</span></li>
-							<li><span>Software Architecture &amp; UML</span></li>
-						</ul>
+					<div class="experience-tags">
+						<span class="experience-tag">Next.js</span>
+						<span class="experience-tag">React</span>
+						<span class="experience-tag">TypeScript</span>
+						<span class="experience-tag">Prisma</span>
+						<span class="experience-tag">PostgreSQL</span>
+						<span class="experience-tag">Vercel</span>
 					</div>
-				</div>
-
-				<div class="kioto_tm_service">
-					<img class="fn__svg" src="/assets/images/icons/skill-data.svg" alt="Data & AI icon" width="40" height="40" />
-					<h3 class="title">Data &amp; AI</h3>
-					<div class="list">
-						<ul>
-							<li><span>Python</span></li>
-							<li><span>Machine Learning</span></li>
-							<li><span>Deep Learning</span></li>
-							<li><span>Data Analysis</span></li>
-							<li><span>QlikSense</span></li>
-							<li><span>Web Scraping</span></li>
-						</ul>
+					<div class="experience-links">
+						<a href="https://deerfieldpropertyholdings.com" target="_blank" rel="noopener noreferrer">deerfieldpropertyholdings.com</a>
+						<span class="experience-status experience-status-live">Live</span>
 					</div>
-				</div>
+					<ul class="experience-summary">
+						<li>Sole technical owner — took the company's first web platform from idea to production alone, including requirements gathering, brand identity, and a live product on its own domain and webmail.</li>
+						<li>Built the full stack in a Turborepo monorepo: Next.js 16 (App Router), React 19, TypeScript, and Server Actions writing to PostgreSQL via Prisma, deployed on Vercel.</li>
+						<li>Designed the database and admin workflow that runs the business — enquiries and lead forms feed a staff portal managing homes, tenants, and applications in one place.</li>
+						<li>Translate non-technical business needs into technical decisions the owner can sign off on, and continue shipping features remotely.</li>
+					</ul>
+				</article>
 
-				<div class="kioto_tm_service">
-					<img class="fn__svg" src="/assets/images/icons/skill-devops.svg" alt="DevOps & Collaboration icon" width="40" height="40" />
-					<h3 class="title">DevOps &amp; Collaboration</h3>
-					<div class="list">
-						<ul>
-							<li><span>Docker</span></li>
-							<li><span>Git</span></li>
-							<li><span>Scrum / Jira</span></li>
-							<li><span>Version Control Workflows</span></li>
-						</ul>
+				<article class="experience-card">
+					<div class="experience-header">
+						<h3 class="experience-role">Full-Stack Web Developer (Contract) <span class="experience-company">— Enduring Steps (NGO)</span></h3>
+						<span class="experience-dates">Jul 2026 – Present</span>
 					</div>
-				</div>
-
-				<div class="kioto_tm_service">
-					<img class="fn__svg" src="/assets/images/icons/skill-iot.svg" alt="IoT & Embedded Systems icon" width="40" height="40" />
-					<h3 class="title">IoT &amp; Embedded Systems</h3>
-					<div class="list">
-						<ul>
-							<li><span>Raspberry Pi</span></li>
-							<li><span>Sensor Integration</span></li>
-							<li><span>System Prototyping</span></li>
-						</ul>
+					<div class="experience-tags">
+						<span class="experience-tag">Next.js</span>
+						<span class="experience-tag">React</span>
+						<span class="experience-tag">TypeScript</span>
+						<span class="experience-tag">Tailwind CSS</span>
+						<span class="experience-tag">Prisma</span>
+						<span class="experience-tag">Auth.js</span>
 					</div>
-				</div>
+					<div class="experience-links">
+						<a href="https://enduringsteps.org" target="_blank" rel="noopener noreferrer">enduringsteps.org</a>
+						<span class="experience-status experience-status-live">Live</span>
+					</div>
+					<ul class="experience-summary">
+						<li>Rebrand &amp; rebuild lead — ran discovery with leadership, designed the identity and logo, and delivered a platform that presents the mission clearly to donors and partners.</li>
+						<li>Converted a static site with Google Forms submissions into a full-stack application with a Prisma/Postgres schema, an admin dashboard, Zod-validated Server Actions, and automated emails via Resend / React Email.</li>
+						<li>Shipped as a Turborepo + pnpm monorepo (Next.js 16, React 19, TypeScript, Tailwind v4) with a shared UI package, Auth.js credentials login, and TOTP 2FA on the admin app.</li>
+						<li>Migrated all legacy content with no data loss and set up the domain, webmail, and email integrations — owning the full delivery, not just the code.</li>
+					</ul>
+				</article>
 
-				<div class="kioto_tm_service">
-					<img class="fn__svg" src="/assets/images/icons/skill-security.svg" alt="Networking & Security icon" width="40" height="40" />
-					<h3 class="title">Networking &amp; Security</h3>
-					<div class="list">
-						<ul>
-							<li><span>Cisco Fundamentals</span></li>
-							<li><span>Kali Linux</span></li>
-							<li><span>Security Basics</span></li>
-						</ul>
+				<article class="experience-card">
+					<div class="experience-header">
+						<h3 class="experience-role">Frontend Engineer (Contract) <span class="experience-company">— NoonPrep</span></h3>
+						<span class="experience-dates">Apr 2026 – Present</span>
+					</div>
+					<div class="experience-tags">
+						<span class="experience-tag">React</span>
+						<span class="experience-tag">TypeScript</span>
+						<span class="experience-tag">Figma</span>
+						<span class="experience-tag">REST APIs</span>
+					</div>
+					<div class="experience-links">
+						<a href="https://noonprep-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">noonprep-frontend.vercel.app</a>
+						<span class="experience-status experience-status-progress">In Progress</span>
+					</div>
+					<ul class="experience-summary">
+						<li>Joined an already-live team and codebase, quickly getting up to speed on the existing architecture and conventions to contribute cleanly from day one.</li>
+						<li>Report directly to the Tech Lead, translating Figma UI/UX designs into responsive, high-performance interfaces and integrating them with backend APIs.</li>
+						<li>Built and shipped the billing management page, connected end-to-end with the existing backend, working in feature branches alongside the rest of the team.</li>
+						<li>Built and cross-client tested all transactional email templates.</li>
+						<li>Collaborate closely with the backend engineer and product team on cross-device compatibility, performance, and accessibility; represent the team in internal and external meetings.</li>
+					</ul>
+				</article>
+
+			</div>
+		</section>
+
+		<div class="kioto-divider-block" aria-hidden="true">
+			<div class="kioto-divider-line"></div>
+		</div>
+
+		<section>
+			<h2 class="kioto-section-title">// Technical Skills</h2>
+			<div class="tech-services-block">
+				<div class="tech-services-grid">
+					<div class="kioto_tm_service">
+						<img class="fn__svg" src="/assets/images/icons/skill-frontend.svg" alt="Frontend Engineering icon" width="40" height="40" />
+						<h3 class="title">Frontend Engineering</h3>
+						<div class="list">
+							<ul>
+								<li><span>React &amp; Next.js</span></li>
+								<li><span>TypeScript</span></li>
+								<li><span>JavaScript</span></li>
+								<li><span>Tailwind CSS</span></li>
+								<li><span>Alpine.js</span></li>
+								<li><span>Livewire</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="kioto_tm_service">
+						<img class="fn__svg" src="/assets/images/icons/skill-backend.svg" alt="Backend & Architecture icon" width="40" height="40" />
+						<h3 class="title">Backend &amp; Architecture</h3>
+						<div class="list">
+							<ul>
+								<li><span>Node.js</span></li>
+								<li><span>Prisma &amp; PostgreSQL</span></li>
+								<li><span>Java &amp; Spring Boot</span></li>
+								<li><span>FastAPI</span></li>
+								<li><span>Laravel</span></li>
+								<li><span>.NET Framework</span></li>
+								<li><span>Software Architecture &amp; UML</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="kioto_tm_service">
+						<img class="fn__svg" src="/assets/images/icons/skill-data.svg" alt="Data & AI icon" width="40" height="40" />
+						<h3 class="title">Data &amp; AI</h3>
+						<div class="list">
+							<ul>
+								<li><span>Python</span></li>
+								<li><span>Machine Learning</span></li>
+								<li><span>Deep Learning</span></li>
+								<li><span>Data Analysis</span></li>
+								<li><span>QlikSense</span></li>
+								<li><span>Web Scraping</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="kioto_tm_service">
+						<img class="fn__svg" src="/assets/images/icons/skill-devops.svg" alt="DevOps & Collaboration icon" width="40" height="40" />
+						<h3 class="title">DevOps &amp; Collaboration</h3>
+						<div class="list">
+							<ul>
+								<li><span>Docker</span></li>
+								<li><span>Git</span></li>
+								<li><span>Scrum / Jira</span></li>
+								<li><span>Version Control Workflows</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="kioto_tm_service">
+						<img class="fn__svg" src="/assets/images/icons/skill-iot.svg" alt="IoT & Embedded Systems icon" width="40" height="40" />
+						<h3 class="title">IoT &amp; Embedded Systems</h3>
+						<div class="list">
+							<ul>
+								<li><span>Raspberry Pi</span></li>
+								<li><span>Sensor Integration</span></li>
+								<li><span>System Prototyping</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="kioto_tm_service">
+						<img class="fn__svg" src="/assets/images/icons/skill-security.svg" alt="Networking & Security icon" width="40" height="40" />
+						<h3 class="title">Networking &amp; Security</h3>
+						<div class="list">
+							<ul>
+								<li><span>Cisco Fundamentals</span></li>
+								<li><span>Kali Linux</span></li>
+								<li><span>Security Basics</span></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+
+	</div>
 </main>
