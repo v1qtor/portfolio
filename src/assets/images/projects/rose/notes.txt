@@ -1,0 +1,8 @@
+Image Classification of Rose Species
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (screenshot): Streamlit demo — species prediction
+- 2.jpg (diagram): Model training pipeline
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

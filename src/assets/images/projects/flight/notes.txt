@@ -1,0 +1,7 @@
+Airport Flight Data Analysis
+
+Drop image files here using these exact filenames (referenced from src/_data/projects.json):
+
+- 1.jpg (screenshot): Delay analysis dashboard
+
+Recommended: landscape, at least 1200px wide, JPG or PNG.

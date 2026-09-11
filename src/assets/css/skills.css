@@ -1,6 +1,166 @@
 /* ================================================
-   Skills — split out of the About Me Kioto layout
+   Experience & Skills — Kioto-style sections
+   (Work Experience, Technical Skills)
    ================================================ */
+
+.content-page {
+	padding-top: 0;
+}
+
+.skills-content {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.first-pair-section {
+	margin-top: 100px;
+}
+
+.kioto-section-title {
+	margin: 0 0 40px;
+	color: var(--accent);
+	font-family: "Syne", sans-serif;
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 1.8;
+	letter-spacing: 5px;
+}
+
+.kioto-divider-block {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+
+.kioto-divider-line {
+	width: 100%;
+	height: 1px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+/* Work experience */
+
+.experience-list {
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.experience-card {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 6px;
+	padding: 34px;
+}
+
+.experience-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 10px;
+	margin-bottom: 16px;
+}
+
+.experience-role {
+	margin: 0;
+	font-family: "Syne", sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--text);
+}
+
+.experience-company {
+	font-weight: 500;
+	color: var(--muted);
+}
+
+.experience-dates {
+	flex-shrink: 0;
+	font-family: "Syne", sans-serif;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--accent);
+	white-space: nowrap;
+}
+
+.experience-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.experience-tag {
+	display: inline-block;
+	border: 1px solid rgba(160, 131, 72, 0.35);
+	color: var(--accent);
+	font-family: "Syne", sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	padding: 4px 10px;
+}
+
+.experience-links {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.experience-links a {
+	font-family: "Syne", sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--accent);
+	text-decoration: none;
+}
+
+.experience-links a:hover {
+	text-decoration: underline;
+}
+
+.experience-status {
+	display: inline-block;
+	font-family: "Syne", sans-serif;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 4px 10px;
+	border-radius: 999px;
+}
+
+.experience-status-live {
+	background: rgba(74, 124, 89, 0.12);
+	color: #4a7c59;
+}
+
+.experience-status-progress {
+	background: rgba(184, 131, 61, 0.14);
+	color: #b8833d;
+}
+
+.experience-summary {
+	margin: 0;
+	padding-left: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.experience-summary li {
+	font-family: "Syne", sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+/* Technical skills */
 
 .tech-services-block {
 	width: 100%;
@@ -59,6 +219,11 @@
 }
 
 @media (max-width: 1200px) {
+	.kioto-section-title {
+		font-size: 23px;
+		letter-spacing: 4px;
+	}
+
 	.tech-services-grid {
 		gap: 0 24px;
 	}
@@ -69,6 +234,15 @@
 }
 
 @media (max-width: 900px) {
+	.kioto-section-title {
+		font-size: 21px;
+		margin-bottom: 32px;
+	}
+
+	.experience-card {
+		padding: 26px;
+	}
+
 	.tech-services-grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 0 20px;
@@ -80,12 +254,36 @@
 }
 
 @media (max-width: 767px) {
+	.first-pair-section {
+		margin-top: 60px;
+	}
+
+	.kioto-divider-block {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
 	.tech-services-grid {
 		grid-template-columns: 1fr;
 	}
 }
 
 @media (max-width: 560px) {
+	.kioto-section-title {
+		margin-bottom: 24px;
+		font-size: 20px;
+		letter-spacing: 3px;
+		line-height: 1.45;
+	}
+
+	.experience-role {
+		font-size: 18px;
+	}
+
+	.experience-summary li {
+		font-size: 14px;
+	}
+
 	.kioto_tm_service .title {
 		font-size: 17px;
 	}
