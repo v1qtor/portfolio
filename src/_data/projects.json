@@ -26,6 +26,31 @@
 		"liveUrl": null
 	},
 	{
+		"slug": "cycling",
+		"type": "Data Engineering / Sports Analytics",
+		"title": "Pro Cycling WorldTour Stage Analytics",
+		"year": "2025",
+		"summary": "An automated multi-source extraction pipeline and exploratory analysis investigating internationalization, podium concentration, and team composition across 995 Grand Tour stage finishes.",
+		"tags": ["Python", "BeautifulSoup4", "cloudscraper", "Pandas", "Data Pipeline"],
+		"problem": "WorldTour race classifications are scattered across disparate HTML tables and paginated sports portals with inconsistent athlete naming conventions. Investigating whether elite cycling is genuinely globalized or dominated by traditional European feeder nations required an automated, resilient extraction pipeline spanning 15 tour editions (2021–2025).",
+		"approach": "Engineered an object-oriented Python scraper using <strong>cloudscraper</strong> and <strong>BeautifulSoup4</strong> with custom browser headers, timeouts, and polite request delays to navigate anti-bot protections. Parsed HTML tables and CSS flag classes across Wikipedia and FirstCycling, standardizing 54 national identities into validated 3-letter UCI codes. Cached the resulting <strong>995-row dataset</strong> locally to decouple downstream analytics from network dependencies.",
+		"outcome": "Delivered a zero-loss analytical pipeline evaluating five competitive hypotheses. Demonstrated that while stage racing maintains a broad international baseline (12–18 nations per tour in the top 10), top-5 podium finishes remain concentrated, with <strong>France (13.9%)</strong> and <strong>Belgium (11.3%)</strong> occupying more than a quarter of all top results.",
+		"highlights": [
+			"<strong>995 Clean Records:</strong> Extracted 657 Wikipedia and 338 FirstCycling finishes with 0 missing values.",
+			"<strong>Roster Diversity as a Floor-Raiser:</strong> Roster diversity strongly correlates with total top-10 finish volume (r = 0.78), serving as a consistency strategy rather than an individual podium guarantee.",
+			"<strong>Host Bias:</strong> Italian and French tours show a 22–24% home rider finish share, dropping to 6.7% in the Tour de Suisse."
+		],
+		"images": [
+			{ "file": "1.jpg", "kind": "screenshot", "caption": "Top 10 nationalities and top-5-vs-others podium concentration" },
+			{ "file": "2.jpg", "kind": "screenshot", "caption": "Multi-year evolution of unique nation counts in top-10 finishes" },
+			{ "file": "3.jpg", "kind": "screenshot", "caption": "Team roster diversity ratio across national teams" },
+			{ "file": "4.jpg", "kind": "screenshot", "caption": "Roster diversity vs. total top-10 finish volume" },
+			{ "file": "5.jpg", "kind": "screenshot", "caption": "Host country advantage across Italy, France, and Switzerland" }
+		],
+		"githubUrl": "#",
+		"liveUrl": "#"
+	},
+	{
 		"slug": "rail",
 		"type": "AI / Computer Vision",
 		"title": "Rail Track Anomaly Detection",
