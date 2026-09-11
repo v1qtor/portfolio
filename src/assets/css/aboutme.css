@@ -13,7 +13,7 @@
 }
 
 .first-pair-section {
-	margin-top: 100px;
+	margin-top: 48px;
 }
 
 .kioto-section-title {
@@ -259,7 +259,7 @@
 
 @media (max-width: 767px) {
 	.first-pair-section {
-		margin-top: 60px;
+		margin-top: 32px;
 	}
 
 	.kioto-divider-block {
