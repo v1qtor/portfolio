@@ -41,14 +41,14 @@
 			"<strong>Host Bias:</strong> Italian and French tours show a 22–24% home rider finish share, dropping to 6.7% in the Tour de Suisse."
 		],
 		"images": [
-			{ "file": "1.jpg", "kind": "screenshot", "caption": "Top 10 nationalities and top-5-vs-others podium concentration" },
-			{ "file": "2.jpg", "kind": "screenshot", "caption": "Multi-year evolution of unique nation counts in top-10 finishes" },
-			{ "file": "3.jpg", "kind": "screenshot", "caption": "Team roster diversity ratio across national teams" },
-			{ "file": "4.jpg", "kind": "screenshot", "caption": "Roster diversity vs. total top-10 finish volume" },
-			{ "file": "5.jpg", "kind": "screenshot", "caption": "Host country advantage across Italy, France, and Switzerland" }
+			{ "file": "1.png", "kind": "screenshot", "caption": "Top 10 nationalities and top-5-vs-others podium concentration" },
+			{ "file": "2.png", "kind": "screenshot", "caption": "Multi-year evolution of unique nation counts in top-10 finishes" },
+			{ "file": "3.png", "kind": "screenshot", "caption": "Team roster diversity ratio across national teams" },
+			{ "file": "4.png", "kind": "screenshot", "caption": "Roster diversity vs. total top-10 finish volume" },
+			{ "file": "5.png", "kind": "screenshot", "caption": "Host country advantage across Italy, France, and Switzerland" }
 		],
-		"githubUrl": "#",
-		"liveUrl": "#"
+		"githubUrl": "https://github.com/v1qtor/bike-racing-web-scraping",
+		"liveUrl": null
 	},
 	{
 		"slug": "rail",

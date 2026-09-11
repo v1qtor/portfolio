@@ -214,6 +214,10 @@
 	background: #f1ede4;
 }
 
+.projects-gallery-placeholder[hidden] {
+	display: none;
+}
+
 .projects-gallery-placeholder-label {
 	font-family: "Syne", sans-serif;
 	font-size: 13px;
@@ -313,6 +317,10 @@
 	text-transform: uppercase;
 	color: var(--muted);
 	background: #f1ede4;
+}
+
+.projects-thumb-placeholder[hidden] {
+	display: none;
 }
 
 .projects-legend {
