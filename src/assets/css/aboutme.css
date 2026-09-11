@@ -171,6 +171,10 @@
 	height: auto;
 }
 
+.resume-canvas[hidden] {
+	display: none;
+}
+
 .resume-fallback {
 	margin: 0;
 	padding: 60px 24px;
