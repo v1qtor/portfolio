@@ -25,12 +25,35 @@
 		<link rel="manifest" href="/site.webmanifest" />
 	</head>
 	<body>
-		<div class="mobile-topbar">
-			<h2 class="mobile-logo"><a href="/" aria-label="Go to home page">VICTOR</a></h2>
+		<header class="site-header">
+			<a href="/" class="site-logo" aria-label="Go to home page">VICTOR</a>
+			<nav class="site-nav-links" aria-label="Main navigation">
+				<ul>
+					{%- for item in nav %}
+					<li><a{% if activeNav == item.key %} class="active"{% endif %} href="{{ item.url }}">{{ item.label }}</a></li>
+					{%- endfor %}
+				</ul>
+			</nav>
+			<div class="site-header-social" aria-label="Social links">
+				<a
+					href="https://www.linkedin.com/in/victorchukwuma/"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="LinkedIn"
+					><i class="bi bi-linkedin"></i
+				></a>
+				<a
+					href="https://github.com/v1qtor"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+					><i class="bi bi-github"></i
+				></a>
+			</div>
 			<button id="menuToggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
 				<i class="bi bi-list"></i>
 			</button>
-		</div>
+		</header>
 
 		<nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
 			<ul>
@@ -40,48 +63,9 @@
 			</ul>
 		</nav>
 
-		<div class="layout">
-			<aside class="sidebar" aria-label="Sidebar navigation">
-				<div class="sidebar-inner">
-					<div class="sidebar-main">
-						<h1 class="logo"><a href="/" aria-label="Go to home page">VICTOR</a></h1>
-						<nav class="sidebar-nav" aria-label="Main navigation">
-							<ul>
-								{%- for item in nav %}
-								<li><a{% if activeNav == item.key %} class="active"{% endif %} href="{{ item.url }}">{{ item.label }}</a></li>
-								{%- endfor %}
-							</ul>
-						</nav>
-					</div>
-					<div class="sidebar-footer">
-						<div class="sidebar-social" aria-label="Social links">
-							<a
-								href="https://www.linkedin.com/in/victorchukwuma/"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="LinkedIn"
-								><i class="bi bi-linkedin"></i
-							></a>
-							<a
-								href="https://github.com/v1qtor"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="GitHub"
-								><i class="bi bi-github"></i
-							></a>
-						</div>
-						<div>
-							<div>© 2026 Victor</div>
-							<div>Computer Science Portfolio</div>
-						</div>
-					</div>
-				</div>
-			</aside>
-
-			<div class="page">
-				{{ content | safe }}
-			</div>
-		</div>
+		<main class="page">
+			{{ content | safe }}
+		</main>
 
 		<script src="/assets/js/scripts.js"></script>
 		{%- for src in pageScripts %}
