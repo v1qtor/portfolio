@@ -4,6 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{{ title }} - Victor Chukwuma</title>
+		<meta name="description" content="{{ description }}" />
+		<link rel="canonical" href="https://victorc.sinners.be{{ page.url }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Victor Chukwuma - Computer Science Portfolio" />
+		<meta property="og:title" content="{{ title }} - Victor Chukwuma" />
+		<meta property="og:description" content="{{ description }}" />
+		<meta property="og:url" content="https://victorc.sinners.be{{ page.url }}" />
+		<meta property="og:image" content="https://victorc.sinners.be/assets/images/hero.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{{ title }} - Victor Chukwuma" />
+		<meta name="twitter:description" content="{{ description }}" />
+		<meta name="twitter:image" content="https://victorc.sinners.be/assets/images/hero.jpg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -25,20 +37,14 @@
 		<link rel="manifest" href="/site.webmanifest" />
 	</head>
 	<body>
-		<header class="site-header">
-			<a href="/" class="site-logo" aria-label="Go to home page">VICTOR</a>
-			<nav class="site-nav-links" aria-label="Main navigation">
-				<ul>
-					{%- for item in nav %}
-					<li><a{% if activeNav == item.key %} class="active"{% endif %} href="{{ item.url }}">{{ item.label }}</a></li>
-					{%- endfor %}
-				</ul>
-			</nav>
-			<div class="site-header-social" aria-label="Social links">
+		<div class="mobile-topbar">
+			<h2 class="mobile-logo"><a href="/" aria-label="Go to home page">VICTOR</a></h2>
+			<div class="mobile-topbar-actions">
 				<a
 					href="https://www.linkedin.com/in/victorchukwuma/"
 					target="_blank"
 					rel="noopener noreferrer"
+					class="mobile-topbar-social"
 					aria-label="LinkedIn"
 					><i class="bi bi-linkedin"></i
 				></a>
@@ -46,14 +52,15 @@
 					href="https://github.com/v1qtor"
 					target="_blank"
 					rel="noopener noreferrer"
+					class="mobile-topbar-social"
 					aria-label="GitHub"
 					><i class="bi bi-github"></i
 				></a>
+				<button id="menuToggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+					<i class="bi bi-list"></i>
+				</button>
 			</div>
-			<button id="menuToggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-				<i class="bi bi-list"></i>
-			</button>
-		</header>
+		</div>
 
 		<nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation">
 			<ul>
@@ -63,9 +70,54 @@
 			</ul>
 		</nav>
 
-		<main class="page">
-			{{ content | safe }}
-		</main>
+		<div class="layout">
+			<aside class="sidebar" aria-label="Sidebar navigation">
+				<div class="sidebar-inner">
+					<div class="sidebar-main">
+						<h1 class="logo"><a href="/" aria-label="Go to home page">VICTOR</a></h1>
+						<nav class="sidebar-nav" aria-label="Main navigation">
+							<ul>
+								{%- for item in nav %}
+								<li><a{% if activeNav == item.key %} class="active"{% endif %} href="{{ item.url }}">{{ item.label }}</a></li>
+								{%- endfor %}
+							</ul>
+						</nav>
+					</div>
+					<div class="sidebar-footer">
+						<div class="sidebar-social" aria-label="Social links">
+							<a
+								href="https://www.linkedin.com/in/victorchukwuma/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LinkedIn"
+								><i class="bi bi-linkedin"></i
+							></a>
+							<a
+								href="https://github.com/v1qtor"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="GitHub"
+								><i class="bi bi-github"></i
+							></a>
+						</div>
+						<div>
+							<div>&copy; 2026 Victor</div>
+							<div>Computer Science Portfolio</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+
+			<div class="page">
+				{{ content | safe }}
+				<footer class="site-footer">
+					<p>&copy; 2026 <strong>Victor Chukwuma</strong><br />Computer Science Portfolio</p>
+					<button type="button" id="backToTop" class="footer-top-btn" aria-label="Back to top">
+						<i class="bi bi-arrow-up"></i>
+					</button>
+				</footer>
+			</div>
+		</div>
 
 		<script src="/assets/js/scripts.js"></script>
 		{%- for src in pageScripts %}

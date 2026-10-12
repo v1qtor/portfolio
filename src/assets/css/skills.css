@@ -13,7 +13,7 @@
 }
 
 .first-pair-section {
-	margin-top: 48px;
+	margin-top: 100px;
 }
 
 .kioto-section-title {
@@ -72,6 +72,18 @@
 .experience-company {
 	font-weight: 500;
 	color: var(--muted);
+}
+
+.experience-company a {
+	color: var(--muted);
+	text-decoration: none;
+	border-bottom: 1px solid rgba(160, 131, 72, 0.4);
+	transition: color 150ms ease, border-color 150ms ease;
+}
+
+.experience-company a:hover {
+	color: var(--accent);
+	border-color: var(--accent);
 }
 
 .experience-dates {
@@ -154,7 +166,7 @@
 
 .experience-summary li {
 	font-family: "Syne", sans-serif;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: 400;
 	line-height: 1.7;
 	color: var(--muted);
@@ -168,7 +180,7 @@
 
 .tech-services-grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 0 40px;
 }
 
@@ -178,16 +190,24 @@
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.service-header {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 17px;
+}
+
 .kioto_tm_service .fn__svg {
 	display: block;
 	width: 40px;
 	height: 40px;
-	margin-bottom: 17px;
+	flex-shrink: 0;
 	filter: brightness(0) saturate(100%) invert(57%) sepia(28%) saturate(700%) hue-rotate(5deg) brightness(95%) contrast(90%);
 }
 
 .kioto_tm_service .title {
-	margin: 0 0 8px;
+	margin: 0;
+	min-width: 0;
 	font-family: "Syne", sans-serif;
 	font-size: 20px;
 	font-weight: 600;
@@ -244,7 +264,7 @@
 	}
 
 	.tech-services-grid {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0 20px;
 	}
 
@@ -255,7 +275,7 @@
 
 @media (max-width: 767px) {
 	.first-pair-section {
-		margin-top: 32px;
+		margin-top: 60px;
 	}
 
 	.kioto-divider-block {

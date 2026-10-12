@@ -1,6 +1,6 @@
 .hero {
 	position: relative;
-	min-height: calc(100vh - var(--header-height));
+	min-height: 100vh;
 	overflow: hidden;
 	background: var(--bg);
 	display: grid;
@@ -273,7 +273,6 @@
 	.hero {
 		grid-template-columns: minmax(10px, 1fr) minmax(390px, 500px) 0.5rem minmax(290px, 390px) minmax(10px, 1fr);
 		padding: 44px 12px;
-		transform: translateX(1rem);
 	}
 
 	.hero-media {
@@ -338,7 +337,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-start;
-		min-height: calc(100vh - var(--header-height));
+		min-height: calc(100vh - 72px);
 		padding: 8px 20px 30px;
 		margin-left: 0;
 		width: 100%;

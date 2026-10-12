@@ -13,7 +13,7 @@
 }
 
 .first-pair-section {
-	margin-top: 48px;
+	margin-top: 100px;
 }
 
 .kioto-section-title {
@@ -41,7 +41,6 @@
 	font-weight: 400;
 	line-height: 1.5;
 	overflow-wrap: anywhere;
-	hyphens: auto;
 }
 
 .kioto-divider-block {
@@ -71,12 +70,20 @@
 	line-height: 1.5;
 }
 
-.hobby-panel {
-	display: none;
+.hobby-carousel {
+	overflow: hidden;
+	position: relative;
 }
 
-.hobby-panel.is-active {
-	display: block;
+.hobby-track {
+	display: flex;
+	align-items: flex-start;
+	transition: transform 420ms cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+.hobby-panel {
+	flex: 0 0 100%;
+	min-width: 0;
 }
 
 .hobby-photo {
@@ -92,14 +99,6 @@
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
-}
-
-.hobby-photo-label {
-	font-family: "Syne", sans-serif;
-	font-size: 13px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	color: var(--muted);
 }
 
 .hobby-title {
@@ -124,17 +123,17 @@
 .hobby-dots {
 	display: flex;
 	justify-content: center;
-	gap: 12px;
+	gap: 14px;
 	margin: 30px 0 0;
 	padding: 0;
 	list-style: none;
 }
 
 .hobby-dot {
-	width: 10px;
-	height: 10px;
+	width: 14px;
+	height: 14px;
 	border-radius: 50%;
-	border: 1.5px solid var(--accent);
+	border: 2px solid var(--accent);
 	background: transparent;
 	padding: 0;
 	cursor: pointer;
@@ -259,7 +258,7 @@
 
 @media (max-width: 767px) {
 	.first-pair-section {
-		margin-top: 32px;
+		margin-top: 60px;
 	}
 
 	.kioto-divider-block {

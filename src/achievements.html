@@ -1,5 +1,6 @@
 ---
 title: Achievements
+description: Certificates and recognitions reflecting Victor Chukwuma's growth across data-driven innovation, hospitality operations, and cross-functional training.
 activeNav: achievements
 pageCss:
   - /assets/css/achievements.css
@@ -8,34 +9,43 @@ pageScripts:
 layout: layouts/base.njk
 ---
 <main class="content-page">
-	<header class="page-header">
-		<h2>// Highlights</h2>
-		<p>These certificates reflect practical growth across data-driven innovation, hospitality operations, team contribution, and cross-functional training.</p>
-	</header>
+	<div class="achievements-content">
+		<header class="page-header">
+			<h2>// Highlights</h2>
+			<p>These certificates reflect practical growth across data-driven innovation, hospitality operations, team contribution, and cross-functional training.</p>
+		</header>
 
-	<div class="achievement-list">
-		{% for a in achievements %}
-		<article class="achievement-row">
-			<button type="button" class="achievement-thumb" data-id="{{ a.id }}" aria-label="View full-size {{ a.title }} photos">
-				<img src="{{ a.images[0].src }}" alt="" />
-			</button>
-			<div class="achievement-row-body">
-				<p class="achievement-issuer">{{ a.issuer }}</p>
-				<h3 class="achievement-title">{{ a.title }}</h3>
-				<p class="achievement-subtitle">{{ a.subtitle }}</p>
-			</div>
-		</article>
-		{% endfor %}
+		<div class="achievement-list">
+			{% for a in achievements %}
+			<article class="achievement-row">
+				<button type="button" class="achievement-thumb" data-id="{{ a.id }}" aria-label="View full-size {{ a.title }} photos">
+					<img src="{{ (a.images[1] or a.images[0]).src }}" alt="" />
+					<span class="achievement-thumb-overlay"><i class="bi bi-arrows-angle-expand"></i></span>
+				</button>
+				<div class="achievement-row-body">
+					<button type="button" class="achievement-title-btn" data-id="{{ a.id }}" aria-label="View full details for {{ a.title }}">
+						<h3 class="achievement-title">{{ a.issuer }}</h3>
+					</button>
+					<p class="achievement-subtitle">{{ a.subtitle }}</p>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
 	</div>
 
 	<div id="achievementModal" class="achievement-modal" hidden>
 		<div class="achievement-modal-backdrop" data-close></div>
+		<button type="button" class="achievement-modal-cert-nav achievement-modal-cert-prev" aria-label="Previous certificate"><i class="bi bi-chevron-left"></i></button>
+		<button type="button" class="achievement-modal-cert-nav achievement-modal-cert-next" aria-label="Next certificate"><i class="bi bi-chevron-right"></i></button>
 		<div class="achievement-modal-panel" role="dialog" aria-modal="true" aria-labelledby="achievementModalTitle">
 			<button type="button" class="achievement-modal-close" data-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
 			<div class="achievement-modal-media">
-				<button type="button" class="achievement-modal-nav achievement-modal-prev" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
-				<img id="achievementModalImage" class="achievement-modal-img" src="" alt="" />
-				<button type="button" class="achievement-modal-nav achievement-modal-next" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+				<div class="achievement-modal-frame">
+					<button type="button" class="achievement-modal-nav achievement-modal-prev" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
+					<div class="achievement-modal-track" id="achievementModalTrack"></div>
+					<button type="button" class="achievement-modal-nav achievement-modal-next" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+				</div>
+				<div class="achievement-modal-dots" id="achievementModalDots"></div>
 			</div>
 			<div class="achievement-modal-text">
 				<p class="achievement-issuer" id="achievementModalIssuer"></p>

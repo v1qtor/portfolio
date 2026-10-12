@@ -29,6 +29,25 @@ function initMobileNav() {
 	});
 }
 
+function initBackToTop() {
+	const btn = document.getElementById("backToTop");
+	if (!btn) {
+		return;
+	}
+
+	function toggleVisibility() {
+		btn.classList.toggle("is-visible", window.scrollY > 300);
+	}
+
+	btn.addEventListener("click", () => {
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+
+	window.addEventListener("scroll", toggleVisibility, { passive: true });
+	toggleVisibility();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	initMobileNav();
+	initBackToTop();
 });

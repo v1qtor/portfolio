@@ -1,5 +1,6 @@
 ---
 title: About Me
+description: Learn about Victor Chukwuma's background, professional ambitions, and journey from hospitality operations into applied computer science.
 activeNav: about
 pageCss:
   - /assets/css/aboutme.css
@@ -41,48 +42,35 @@ layout: layouts/base.njk
 			<h2 class="kioto-section-title">// Hobbies</h2>
 			<p class="hobbies-intro">Outside of academics, these are the things that keep me balanced and sharp.</p>
 
-			<div class="hobby-panel is-active" data-hobby="hiking">
-				<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/hiking.jpg')">
-					<span class="hobby-photo-label">Photo</span>
+			<div class="hobby-carousel">
+				<div class="hobby-track">
+					<div class="hobby-panel is-active" data-hobby="hiking">
+						<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/hiking.jpg')"></div>
+						<h3 class="hobby-title">Hiking</h3>
+						<p class="hobby-desc">I enjoy spending time outdoors, and hiking lets me disconnect from screens and stay physically active. The mix of effort and quiet is a reset I look forward to.</p>
+					</div>
+					<div class="hobby-panel" data-hobby="football">
+						<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/football.jpg')"></div>
+						<h3 class="hobby-title">Football</h3>
+						<p class="hobby-desc">Organized football has taught me teamwork, discipline, and camaraderie in ways that carry directly into how I work with a team on a project.</p>
+					</div>
+					<div class="hobby-panel" data-hobby="travel">
+						<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/travel.jpg')"></div>
+						<h3 class="hobby-title">Travel</h3>
+						<p class="hobby-desc">Seeing new places and cultures keeps me curious and broadens how I think about problems, people, and what "normal" even means.</p>
+					</div>
+					<div class="hobby-panel" data-hobby="socializing">
+						<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/socializing.jpg')"></div>
+						<h3 class="hobby-title">Socializing</h3>
+						<p class="hobby-desc">Spending time with friends and meeting new people recharges me and keeps me grounded outside of work — good conversation is where a lot of my best ideas actually come from.</p>
+					</div>
 				</div>
-				<h3 class="hobby-title">Hiking</h3>
-				<p class="hobby-desc">I enjoy spending time outdoors, and hiking lets me disconnect from screens and stay physically active. The mix of effort and quiet is a reset I look forward to.</p>
 			</div>
-			<div class="hobby-panel" data-hobby="football">
-				<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/football.jpg')">
-					<span class="hobby-photo-label">Photo</span>
-				</div>
-				<h3 class="hobby-title">Football</h3>
-				<p class="hobby-desc">Organized football has taught me teamwork, discipline, and camaraderie in ways that carry directly into how I work with a team on a project.</p>
-			</div>
-			<div class="hobby-panel" data-hobby="travel">
-				<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/travel.jpg')">
-					<span class="hobby-photo-label">Photo</span>
-				</div>
-				<h3 class="hobby-title">Travel</h3>
-				<p class="hobby-desc">Seeing new places and cultures keeps me curious and broadens how I think about problems, people, and what "normal" even means.</p>
-			</div>
-			<div class="hobby-panel" data-hobby="horseriding">
-				<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/horseriding.jpg')">
-					<span class="hobby-photo-label">Photo</span>
-				</div>
-				<h3 class="hobby-title">Horseriding</h3>
-				<p class="hobby-desc">Horseriding demands patience and calm communication with an animal that reads your energy instantly — a good lesson in staying composed under pressure.</p>
-			</div>
-			<div class="hobby-panel" data-hobby="gym">
-				<div class="hobby-photo" style="background-image:url('/assets/images/hobbies/gym.jpg')">
-					<span class="hobby-photo-label">Photo</span>
-				</div>
-				<h3 class="hobby-title">Gym</h3>
-				<p class="hobby-desc">Consistent training is where I practice the same discipline and follow-through I try to bring to my work — small, repeated effort adding up over time.</p>
-			</div>
-
 			<ul class="hobby-dots" role="tablist" aria-label="Choose a hobby">
 				<li><button type="button" class="hobby-dot is-active" data-target="hiking" role="tab" aria-selected="true" aria-label="Show Hiking"></button></li>
 				<li><button type="button" class="hobby-dot" data-target="football" role="tab" aria-selected="false" aria-label="Show Football"></button></li>
 				<li><button type="button" class="hobby-dot" data-target="travel" role="tab" aria-selected="false" aria-label="Show Travel"></button></li>
-				<li><button type="button" class="hobby-dot" data-target="horseriding" role="tab" aria-selected="false" aria-label="Show Horseriding"></button></li>
-				<li><button type="button" class="hobby-dot" data-target="gym" role="tab" aria-selected="false" aria-label="Show Gym"></button></li>
+				<li><button type="button" class="hobby-dot" data-target="socializing" role="tab" aria-selected="false" aria-label="Show Socializing"></button></li>
 			</ul>
 		</section>
 

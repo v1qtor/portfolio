@@ -1,37 +1,42 @@
 [
 	{
-		"slug": "schedule",
-		"type": "Requirements Analysis",
-		"title": "Anderson Household Task Management",
-		"year": "2023",
-		"summary": "A requirements analysis and prototype for a web application to manage schedules, tasks, invoices, and meals for the Anderson household — replacing a disorganized mix of paper notes and online tools.",
-		"tags": ["Requirements Analysis", "UML", "Figma", "Web App", "Team Lead"],
-		"problem": "The Anderson household's au pair managed everything manually — cooking schedules, bill payments, task delegation — across a fragmented mix of paper notes and unrelated apps. Multiple users with different roles needed to access and update shared information without stepping on each other's changes. The existing approach caused confusion, missed tasks, and an unnecessarily heavy workload.",
-		"approach": "Led a team of 5 through a full requirements analysis cycle: stakeholder interviews, use-case modeling, functional and non-functional requirements capture, and prototype development. Produced a UML use-case diagram mapping actors (Family, Employee, Au Pair, Grandson, Staff) to system functions. Built interactive wireframes in Figma covering the calendar, to-do list, invoice management, and meal planning modules. Applied MoSCoW prioritization to scope the MVP against a fixed academic deadline.",
-		"outcome": "Delivered a fully documented requirements specification and a clickable Figma prototype that met all client expectations. The prototype demonstrated how a single central system could reduce the au pair's administrative workload by consolidating five separate tools into one. Received highest marks in the Requirements Analysis course module.",
+		"slug": "andersons",
+		"type": "Full-Stack Web Development",
+		"title": "Andersons Household Management App",
+		"year": "2026",
+		"summary": "A full-stack Laravel + Livewire app for managing a busy household — trip planning with live route maps, shared meal scheduling, staff/expense tracking, and role-based access for family members, staff, and household admins.",
+		"tags": ["Laravel", "Livewire", "Tailwind CSS", "Pusher/Echo", "Jira"],
+		"thumbnail": "thumbnail.png",
+		"problem": "The Anderson household's au pair managed everything manually — cooking schedules, bill payments, task delegation — across a fragmented mix of paper notes and unrelated apps. Coordinating trip logistics, meal planning, staff schedules, and expenses across family members, staff, and admins needed more than a shared calendar: <strong>different people needed different slices of the same system</strong> — family members shouldn't see staff pay, staff shouldn't see family finances — and admins needed a shortage alert when too many staff were unavailable on the same day.",
+		"approach": "Ran <strong>multiple requirements-gathering meetings with the client</strong> (Laurien Stroobants) as part of a team project, coordinating tasks and sprints across the team in <strong>Jira</strong>, then built a <strong>Figma prototype that was reviewed and approved by the client before any code was written</strong>. Used <strong>MoSCoW prioritization</strong> to scope the most important features against a fixed timeline, and weighed <strong>non-functional requirements throughout — usability, security, performance, and reliability</strong>. Built on Laravel 12 with Livewire 3 (Flux UI) and Tailwind CSS 4, with role-based access (Household Admin, Family Member, Staff, Chef) enforced through Laravel Policies rather than scattered role checks. <strong>Personally designed and built the invoice/expense-tracking module and the real-time notification system</strong> (WebSocket-based, via Pusher/Laravel Echo) that pushes live updates — trip status, checkpoint arrivals, meal RSVPs — to every connected role without a page refresh. Trips are planned as a route of geocoded checkpoints with live Google Maps previews, document/permit attachments, and per-checkpoint arrival photos, backed by a reusable checkpoints library organized into folders. Address geocoding uses the free Nominatim/OpenStreetMap API.",
+		"outcome": "Delivered a client-approved Figma prototype before development began, then shipped as a <strong>live production app</strong> handling trips, meals, invoices, staff availability, and household scheduling for four distinct roles, with automated checkpoint-arrival and trip-overdue reminders running as scheduled console commands.",
 		"highlights": [
-			"UML use-case diagram with 5 actor types and 12 system functions",
-			"MoSCoW-prioritized functional and non-functional requirements",
-			"Figma prototype: calendar, to-do list, invoice, and meal modules",
-			"Team lead: coordinated 5 members across analysis and design phases",
-			"Non-functional requirements: usability, security, performance, reliability"
+			"<strong>Client Collaboration:</strong> Ran multiple requirements meetings and delivered a Figma prototype approved by the client before development began.",
+			"<strong>Personally Built:</strong> The invoice/expense-tracking module and the real-time WebSocket notification system (Pusher/Laravel Echo).",
+			"<strong>MoSCoW Prioritization:</strong> Scoped must-have features against a fixed academic timeline.",
+			"<strong>Non-Functional Requirements:</strong> Usability, security, performance, and reliability considered throughout, not just feature checklist.",
+			"Live production deployment, not just a local demo — role-based access across 4 roles enforced via Laravel Policies.",
+			"Live Google Maps route previews over geocoded trip checkpoints; tested with Pest 4, including CI via GitHub Actions."
 		],
 		"images": [
-			{ "file": "1.jpg", "kind": "diagram", "caption": "UML use-case diagram — actors and system functions" },
-			{ "file": "2.jpg", "kind": "wireframe", "caption": "Calendar and to-do module wireframes" },
-			{ "file": "3.jpg", "kind": "wireframe", "caption": "Invoice management module — prototype screen" },
-			{ "file": "4.jpg", "kind": "screenshot", "caption": "Meal planning module — final Figma prototype" }
+			{ "file": "1.png", "kind": "screenshot", "caption": "Dashboard overview" },
+			{ "file": "2.png", "kind": "screenshot", "caption": "<strong>Invoice &amp; expense tracking</strong> — built end-to-end by me" },
+			{ "file": "3.png", "kind": "screenshot", "caption": "Trips — route planning with live Google Maps checkpoints" },
+			{ "file": "4.png", "kind": "diagram", "caption": "UML use-case diagram — client-approved requirements, before any code was written" },
+			{ "file": "5.png", "kind": "diagram", "caption": "Data model — the full database schema behind the app" }
 		],
-		"githubUrl": "#",
-		"liveUrl": null
+		"githubUrl": "https://github.com/v1qtor/Andersons_app",
+		"liveUrl": "https://www.andersons.vcee.be",
+		"demoCredentials": "Demo Admin: laurien@andersons.com / password"
 	},
 	{
 		"slug": "cycling",
-		"type": "Data Engineering / Sports Analytics",
+		"type": "Web Scraping / Data Engineering",
 		"title": "Pro Cycling WorldTour Stage Analytics",
 		"year": "2025",
 		"summary": "An automated multi-source extraction pipeline and exploratory analysis investigating internationalization, podium concentration, and team composition across 995 Grand Tour stage finishes.",
 		"tags": ["Python", "BeautifulSoup4", "cloudscraper", "Pandas", "Data Pipeline"],
+		"thumbnail": "thumbnail.jpg",
 		"problem": "WorldTour race classifications are scattered across disparate HTML tables and paginated sports portals with inconsistent athlete naming conventions. Investigating whether elite cycling is genuinely globalized or dominated by traditional European feeder nations required an automated, resilient extraction pipeline spanning 15 tour editions (2021–2025).",
 		"approach": "Engineered an object-oriented Python scraper using <strong>cloudscraper</strong> and <strong>BeautifulSoup4</strong> with custom browser headers, timeouts, and polite request delays to navigate anti-bot protections. Parsed HTML tables and CSS flag classes across Wikipedia and FirstCycling, standardizing 54 national identities into validated 3-letter UCI codes. Cached the resulting <strong>995-row dataset</strong> locally to decouple downstream analytics from network dependencies.",
 		"outcome": "Delivered a zero-loss analytical pipeline evaluating five competitive hypotheses. Demonstrated that while stage racing maintains a broad international baseline (12–18 nations per tour in the top 10), top-5 podium finishes remain concentrated, with <strong>France (13.9%)</strong> and <strong>Belgium (11.3%)</strong> occupying more than a quarter of all top results.",
@@ -51,137 +56,77 @@
 		"liveUrl": null
 	},
 	{
-		"slug": "rail",
-		"type": "AI / Computer Vision",
-		"title": "Rail Track Anomaly Detection",
-		"year": "2024",
-		"summary": "A two-stage AI workflow segmenting regions of interest and flagging anomalies to support rail maintenance planning.",
-		"tags": ["U-Net", "CNN", "YOLOv8", "Team Project"],
-		"problem": "Manual rail inspection is labor-intensive and inconsistent, and subtle track defects can go unnoticed until they become safety risks.",
-		"approach": "Designed a two-stage pipeline as part of a team project: a U-Net model segments regions of interest along the track, then a CNN/YOLOv8 stage flags likely anomalies within those regions for review.",
-		"outcome": "Delivered a working anomaly-flagging pipeline that demonstrates how computer vision can support maintenance planning and reduce reliance on manual visual inspection.",
+		"slug": "breakdown",
+		"type": "Machine Learning & Predictive Maintenance",
+		"title": "Vehicle Breakdown Classification",
+		"year": "2026",
+		"summary": "A collaborative predictive maintenance pipeline and ablation study optimizing tree-based ensembles for highly imbalanced failure data.",
+		"tags": ["Python", "Scikit-learn", "Imbalanced-learn", "Kaggle", "Team of 3"],
+		"thumbnail": "thumbnail.png",
+		"problem": "Predicting vehicle mechanical failures requires navigating extreme class imbalance (a 5:1 ratio of healthy to broken-down cars). Furthermore, traditional accuracy is a dangerous metric for predictive maintenance: a False Negative (missing a breakdown) results in stranded drivers and costly engine failure, whereas a False Positive is merely an unnecessary inspection.",
+		"approach": "Working within a team of 3, we engineered a leakage-free data pipeline utilizing IQR winsorization and median imputation fitted strictly on training splits. To determine the best modeling strategy, I conducted an ablation study evaluating four Random Forest architectures. We optimized the decision threshold to maximize the F2-score (weighing Recall twice as heavily as Precision) and implemented a Balanced Random Forest with bootstrap sampling to inherently penalize the majority class.",
+		"outcome": "The study yielded a highly valuable insight: algorithm-level balancing on raw data significantly outperformed manual feature engineering, which introduced noise. The final Balanced Random Forest achieved an 87% Recall rate and a 0.93 OOB ROC-AUC locally, generalizing successfully to achieve a 0.839 score on the Kaggle hold-out test set.",
 		"highlights": [
-			"Two-stage segmentation + detection pipeline",
-			"U-Net region-of-interest segmentation",
-			"YOLOv8 anomaly flagging",
-			"Collaborative team delivery"
+			"Kaggle Validated: Scored 0.839 on the competition leaderboard, proving strong generalization on unseen data.",
+			"Business-Aligned Metrics: Shifted evaluation from raw Accuracy to F2-Score and PR-AUC to minimize expensive False Negatives.",
+			"Team Collaboration: Coordinated preprocessing, model selection, and validation workflows across a 3-person team."
 		],
 		"images": [
-			{ "file": "1.jpg", "kind": "diagram", "caption": "Pipeline architecture — segmentation to detection" },
-			{ "file": "2.jpg", "kind": "screenshot", "caption": "U-Net segmentation output" },
-			{ "file": "3.jpg", "kind": "screenshot", "caption": "YOLOv8 anomaly detections on track imagery" }
+			{ "file": "1.png", "kind": "screenshot", "caption": "All models — OOB confusion matrices at best threshold" },
+			{ "file": "2.png", "kind": "screenshot", "caption": "Target class distribution — 5:1 imbalance in training data" },
+			{ "file": "3.png", "kind": "screenshot", "caption": "Before vs. after cleaning — winsorized and imputed affected columns" },
+			{ "file": "4.png", "kind": "screenshot", "caption": "Breakdown rate per categorical feature" }
 		],
-		"githubUrl": "#",
+		"githubUrl": "https://github.com/v1qtor/team-6-ai",
 		"liveUrl": null
 	},
 	{
-		"slug": "airbnb",
-		"type": "Business Intelligence",
-		"title": "Airbnb Data Analysis",
-		"year": "2024",
-		"summary": "A BI project exploring market dynamics and community impact across Antwerp, Brussels, and Ghent.",
-		"tags": ["Qlik Sense", "ETL", "Business Intelligence"],
-		"problem": "Understanding Airbnb's market dynamics and community impact across three Belgian cities required consolidating scattered, inconsistent listing and booking data.",
-		"approach": "Built an ETL pipeline to clean and merge listing data, then designed Qlik Sense dashboards comparing pricing, availability, and neighborhood-level density across Antwerp, Brussels, and Ghent.",
-		"outcome": "Delivered a BI dashboard that surfaced city-level market and community trends, supporting clearer discussion of short-term rental impact.",
+		"slug": "lizard",
+		"type": "Deep Learning & Computer Vision",
+		"title": "Lizard Species Image Classification",
+		"year": "2026",
+		"summary": "An end-to-end computer vision pipeline utilizing transfer learning, test-time augmentation, and fine-tuned EfficientNet architectures for a multi-class Kaggle competition.",
+		"tags": ["Python", "TensorFlow/Keras", "EfficientNetV2", "Computer Vision", "Kaggle"],
+		"thumbnail": "thumbnail.png",
+		"problem": "The challenge required classifying 7 visually similar lizard species for a Kaggle competition using a highly constrained dataset of only 1,334 training images. Training deep neural networks from scratch on small datasets risks severe overfitting, necessitating aggressive regularization, transfer learning, and domain-specific spatial priors to ensure generalization to unseen test data.",
+		"approach": "Engineered a two-phase TensorFlow pipeline leveraging an EfficientNetV2-S backbone for its parameter efficiency. Trained a custom classification head before selectively fine-tuning the top 40 layers. Crucially, Batch Normalization layers were frozen during fine-tuning to prevent feature degradation. Applied in-model Keras augmentations while intentionally excluding vertical flips to preserve natural lizard orientation.",
+		"outcome": "The two-phase architecture stabilized learning and eliminated the validation loss degradation typically seen in small-dataset fine-tuning. The model achieved a 0.764 Macro F1-score on the validation split. By implementing Test-Time Augmentation (TTA) and label smoothing (0.1), the final submission secured an estimated 1–2% performance boost on the Kaggle leaderboard.",
 		"highlights": [
-			"ETL pipeline for multi-city listing data",
-			"Qlik Sense comparative dashboards",
-			"Three-city market and community analysis"
+			"Strategic Fine-Tuning: Froze 110 BatchNorm layers during Phase 2 to prevent catastrophic forgetting and overfitting.",
+			"Robust Inference: Implemented Test-Time Augmentation (TTA) to average predictions across multiple augmented versions of test images.",
+			"Mixed Precision: Utilized mixed_float16 policies to maximize GPU memory efficiency and accelerate training times."
 		],
 		"images": [
-			{ "file": "1.jpg", "kind": "diagram", "caption": "ETL pipeline overview" },
-			{ "file": "2.jpg", "kind": "screenshot", "caption": "Qlik Sense dashboard — pricing and density by city" }
+			{ "file": "1.png", "kind": "screenshot", "caption": "Training curves — Phase 1 (frozen backbone) vs. Phase 2 (fine-tuned), accuracy and loss" },
+			{ "file": "2.png", "kind": "screenshot", "caption": "Confusion matrix — class-by-class validation accuracy across all 7 species" }
 		],
-		"githubUrl": "#",
+		"githubUrl": "https://github.com/v1qtor/lizard-project",
 		"liveUrl": null
 	},
 	{
-		"slug": "rose",
-		"type": "Machine Learning",
-		"title": "Image Classification of Rose Species",
-		"year": "2023",
-		"summary": "A computer vision pipeline classifying seven rose species with transfer learning, shipped as a lightweight demo app.",
-		"tags": ["Python", "fastai", "PyTorch", "Streamlit"],
-		"problem": "Manually identifying rose species from photos is slow and requires botanical expertise most people don't have.",
-		"approach": "Built a transfer-learning image classifier over seven rose species using fastai/PyTorch on a curated, augmented dataset, then wrapped it in a Streamlit demo for quick, interactive testing.",
-		"outcome": "Delivered a working demo achieving strong classification accuracy across species, showing how transfer learning shortens the path from dataset to usable tool.",
+		"slug": "bottling",
+		"type": "Business Intelligence & Dashboard Design",
+		"title": "Industrial Bottling Analytics: End-to-End Qlik Sense Dashboard",
+		"year": "2026",
+		"summary": "A 3-tier operational dashboard built to transform plant telemetry into clear, actionable reporting using advanced chart selection and interactive UI controls.",
+		"tags": ["Qlik Sense", "Visualization", "Set Analysis", "Variable Logic", "KPI Design"],
+		"thumbnail": "thumbnail.jpg",
+		"problem": "Industrial bottling lines produce <strong>high-density operational data</strong> across shift outputs, flavor recipes, and unexpected machine stops. The objective was to design a clean, intuitive multi-sheet dashboard in Qlik Sense that translates raw production telemetry into <strong>fast operational insights</strong> — ensuring operators and managers can identify line bottlenecks without navigating through clutter.",
+		"approach": "Structured the reporting into a <strong>three-tier dashboard flow</strong>: an Executive Summary sheet surfacing headline throughput, total plant uptime vs. downtime, flavor volume distribution, and median downtime limits; an Operational Trends sheet highlighting day-to-day production patterns alongside ranked downtime reasons; and a Batch Details sheet for flavor-group comparisons and granular batch auditing down to individual production runs. Selected chart types for precise encoding — <strong>horizontal gauge bars</strong> with green/amber/red color segments to flag downtime against plant benchmarks, <strong>dual-layer area charts</strong> with dynamic reference lines comparing daily production volume to average downtime, and <strong>conditional background colors</strong> on pivot tables to flag batches exceeding acceptable downtime limits. Built <strong>dynamic button controls driven by variables</strong> (vTopN) to toggle between Top 3 and Top 5 downtime drivers in real time, and applied <strong>Set Analysis</strong> ({1}) to isolate flavor-group donut charts (cola vs. fruit) as fixed benchmarks that stay static regardless of global user selections.",
+		"outcome": "Delivered a polished, responsive manufacturing dashboard providing full line visibility across <strong>41 production cycles</strong>, enabling floor supervisors to track throughput targets, quickly identify leading downtime causes, and drill directly into problematic batches and downtime reasons.",
 		"highlights": [
-			"7-species image classifier",
-			"Transfer learning on a pretrained CNN",
-			"Data augmentation pipeline",
-			"Interactive Streamlit demo app"
+			"<strong>Three-Tier Reporting:</strong> Executive Summary, Operational Trends, and Batch Details sheets structured for progressively deeper drill-down.",
+			"<strong>Set Analysis:</strong> Used {1} expressions to lock flavor-group donut charts as fixed benchmarks, unaffected by global filter selections.",
+			"<strong>Dynamic Variable Controls:</strong> Built a vTopN-driven button toggle to switch between Top 3 and Top 5 downtime drivers in real time.",
+			"<strong>Precise Visual Encoding:</strong> Color-thresholded gauge bars, dual-layer area charts with reference lines, and conditional pivot-table formatting to flag downtime outliers at a glance."
 		],
 		"images": [
-			{ "file": "1.jpg", "kind": "screenshot", "caption": "Streamlit demo — species prediction" },
-			{ "file": "2.jpg", "kind": "diagram", "caption": "Model training pipeline" }
-		],
-		"githubUrl": "#",
-		"liveUrl": "#"
-	},
-	{
-		"slug": "expense",
-		"type": "Generative AI / Automation",
-		"title": "AI Builder for Expense Notes",
-		"year": "2024",
-		"summary": "An automation flow scanning receipts into structured expense tracking, simplifying reimbursements and reporting.",
-		"tags": ["Power Apps", "AI Builder", "PowerBI"],
-		"problem": "Employees manually re-typed receipt data into spreadsheets for reimbursement, which was slow and error-prone.",
-		"approach": "Built an AI Builder automation flow to scan and extract receipt fields automatically, feeding structured data into a Power BI reporting layer.",
-		"outcome": "Simplified reimbursement submission and reporting by removing manual data entry from the process.",
-		"highlights": [
-			"AI Builder receipt scanning",
-			"Power Apps flow automation",
-			"PowerBI reporting integration"
-		],
-		"images": [
-			{ "file": "1.jpg", "kind": "wireframe", "caption": "Power Apps submission flow" },
-			{ "file": "2.jpg", "kind": "screenshot", "caption": "PowerBI reporting dashboard" }
+			{ "file": "1.png", "kind": "screenshot", "caption": "Executive Summary — headline throughput, uptime vs. downtime, flavor volume distribution" },
+			{ "file": "2.png", "kind": "screenshot", "caption": "Operational Trends — day-to-day production patterns and ranked downtime reasons" },
+			{ "file": "3.png", "kind": "screenshot", "caption": "Batch Details — flavor-group comparisons and granular batch auditing" },
+			{ "file": "4.png", "kind": "diagram", "caption": "Data model — star schema linking production facts to operator, product, batch, and downtime-factor dimensions" }
 		],
 		"githubUrl": null,
 		"liveUrl": null
-	},
-	{
-		"slug": "flight",
-		"type": "Data Analysis",
-		"title": "Airport Flight Data Analysis",
-		"year": "2023",
-		"summary": "Exploratory dashboards surfacing delay patterns across airlines, routes, and time windows.",
-		"tags": ["Qlik Sense"],
-		"problem": "Airlines and analysts lacked a quick way to see delay patterns across routes, carriers, and time windows.",
-		"approach": "Built exploratory Qlik Sense dashboards breaking down delays by airline, route, and time window for fast comparison.",
-		"outcome": "Delivered dashboards that made delay patterns visible at a glance, supporting faster root-cause discussion.",
-		"highlights": [
-			"Qlik Sense dashboarding",
-			"Multi-dimension delay analysis",
-			"Airline / route / time breakdowns"
-		],
-		"images": [
-			{ "file": "1.jpg", "kind": "screenshot", "caption": "Delay analysis dashboard" }
-		],
-		"githubUrl": "#",
-		"liveUrl": null
-	},
-	{
-		"slug": "job",
-		"type": "AI / NLP",
-		"title": "Job Application Training Assistant",
-		"year": "2024",
-		"summary": "A platform organizing mock interviews at scale, reducing admin effort between students, coordinators, and recruiters.",
-		"tags": ["Laravel", "MySQL"],
-		"problem": "Coordinating mock interviews between students, coordinators, and recruiters involved heavy manual scheduling and admin work.",
-		"approach": "Built a Laravel/MySQL platform to schedule, track, and manage mock interview sessions at scale, replacing manual coordination.",
-		"outcome": "Delivered a live platform that cut scheduling admin time and gave coordinators a single system to manage sessions end-to-end.",
-		"highlights": [
-			"Laravel/MySQL scheduling platform",
-			"Role-based access for students, coordinators, recruiters",
-			"End-to-end session tracking"
-		],
-		"images": [
-			{ "file": "1.jpg", "kind": "wireframe", "caption": "Session scheduling screen" },
-			{ "file": "2.jpg", "kind": "screenshot", "caption": "Coordinator dashboard" }
-		],
-		"githubUrl": "#",
-		"liveUrl": "#"
 	}
 ]

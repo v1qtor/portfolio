@@ -1,176 +1,228 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const dataEl = document.getElementById("projectsData");
-	const detail = document.getElementById("projectsDetail");
-	const navItems = document.querySelectorAll(".projects-nav-item");
-	if (!dataEl || !detail || !navItems.length) {
+	const modal = document.getElementById("projectModal");
+	if (!dataEl || !modal) {
 		return;
 	}
 
 	const projects = JSON.parse(dataEl.textContent);
+	const modalTrack = document.getElementById("projectModalTrack");
+	const modalCaption = document.getElementById("projectModalCaption");
+	const modalEyebrow = document.getElementById("projectModalEyebrow");
+	const modalTitle = document.getElementById("projectModalTitle");
+	const modalTags = document.getElementById("projectModalTags");
+	const modalLinks = document.getElementById("projectModalLinks");
+	const modalBody = document.getElementById("projectModalBody");
+	const modalDots = document.getElementById("projectModalDots");
+	const prevBtn = modal.querySelector(".project-modal-prev");
+	const nextBtn = modal.querySelector(".project-modal-next");
+	const certPrevBtn = modal.querySelector(".project-modal-cert-prev");
+	const certNextBtn = modal.querySelector(".project-modal-cert-next");
+
+	let activeItemIndex = 0;
 	let activeImageIndex = 0;
+	let lastFocused = null;
+
+	function activeItem() {
+		return projects[activeItemIndex];
+	}
 
 	function imageSrc(project, image) {
 		return "/assets/images/projects/" + project.slug + "/" + image.file;
 	}
 
-	function attachImageFallback(img, placeholder) {
-		img.addEventListener("error", () => {
-			img.hidden = true;
-			placeholder.hidden = false;
-		}, { once: true });
+	function updateImagePosition() {
+		const item = activeItem();
+		const image = item.images[activeImageIndex];
+
+		modalTrack.style.transform = "translateX(-" + activeImageIndex * 100 + "%)";
+		modalCaption.innerHTML = image.caption;
+
+		modalDots.querySelectorAll(".project-modal-dot").forEach((dot, i) => {
+			dot.classList.toggle("is-active", i === activeImageIndex);
+		});
 	}
 
-	function renderGallery(project) {
-		const images = project.images;
-		const active = images[activeImageIndex];
+	function linksHtml(item) {
+		return (
+			(item.githubUrl ? '<a href="' + item.githubUrl + '" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-github"></i>GitHub</a>' : "") +
+			(item.liveUrl ? '<a href="' + item.liveUrl + '" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-box-arrow-up-right"></i>Live</a>' : "") +
+			(item.demoCredentials ? '<span class="project-modal-demo"><i class="bi bi-key"></i>' + item.demoCredentials + "</span>" : "")
+		);
+	}
 
-		const hasPrev = activeImageIndex > 0;
-		const hasNext = activeImageIndex < images.length - 1;
+	function renderProject() {
+		const item = activeItem();
+		activeImageIndex = 0;
 
-		const thumbsHtml = images
-			.map((img, i) => {
+		modalEyebrow.textContent = item.type + " — " + item.year;
+		modalTitle.textContent = item.title;
+		modalTags.innerHTML = item.tags.map((tag) => '<span class="project-tag">' + tag + "</span>").join("");
+		modalLinks.innerHTML = linksHtml(item);
+		modalBody.innerHTML =
+			"<h4>The Problem</h4><p>" + item.problem + "</p>" +
+			"<h4>The Approach</h4><p>" + item.approach + "</p>" +
+			"<h4>Outcome</h4><p>" + item.outcome + "</p>" +
+			"<h4>Key Highlights</h4><ul>" + item.highlights.map((h) => "<li>" + h + "</li>").join("") + "</ul>";
+
+		modalTrack.innerHTML = item.images
+			.map((image) => {
+				const alt = image.caption.replace(/<[^>]*>/g, "");
 				return (
-					'<button type="button" class="projects-thumb' +
-					(i === activeImageIndex ? " is-active" : "") +
-					'" data-index="' + i + '" aria-label="' + img.caption + '">' +
-					'<img class="projects-thumb-img" src="' + imageSrc(project, img) + '" alt="" />' +
-					'<span class="projects-thumb-placeholder" hidden>' + img.kind + "</span>" +
-					"</button>"
+					'<div class="project-modal-slide">' +
+						'<img class="project-modal-img" src="' + imageSrc(item, image) + '" alt="' + alt + '" />' +
+						'<div class="project-modal-placeholder" hidden>' + image.kind + "</div>" +
+					"</div>"
 				);
 			})
 			.join("");
+		modalTrack.style.transition = "none";
 
-		const legendKinds = [...new Set(images.map((img) => img.kind))];
-		const legendHtml = legendKinds
-			.map((kind) => '<span class="projects-legend-item"><span class="projects-dot projects-dot-' + kind + '"></span>' + kind.charAt(0).toUpperCase() + kind.slice(1) + "</span>")
+		modalTrack.querySelectorAll(".project-modal-slide").forEach((slide) => {
+			const img = slide.querySelector(".project-modal-img");
+			const placeholder = slide.querySelector(".project-modal-placeholder");
+			img.addEventListener("error", () => {
+				img.hidden = true;
+				placeholder.hidden = false;
+			}, { once: true });
+		});
+
+		modalDots.innerHTML = item.images
+			.map((_, i) => '<button type="button" class="project-modal-dot' + (i === 0 ? " is-active" : "") + '" data-index="' + i + '" aria-label="Show image ' + (i + 1) + '"></button>')
 			.join("");
+		modalDots.hidden = item.images.length <= 1;
 
-		return (
-			'<div class="projects-gallery">' +
-				(hasPrev ? '<button type="button" class="projects-gallery-nav projects-gallery-prev" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>' : "") +
-				(hasNext ? '<button type="button" class="projects-gallery-nav projects-gallery-next" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>' : "") +
-				'<span class="projects-gallery-counter">' + (activeImageIndex + 1) + " / " + images.length + "</span>" +
-				'<img class="projects-gallery-img" src="' + imageSrc(project, active) + '" alt="" />' +
-				'<div class="projects-gallery-placeholder" hidden>' +
-					'<span class="projects-gallery-placeholder-label">' + active.kind + "</span>" +
-				"</div>" +
-			"</div>" +
-			'<p class="projects-gallery-caption">' + active.caption + "</p>" +
-			'<div class="projects-thumbs">' + thumbsHtml + "</div>" +
-			'<div class="projects-legend">' + legendHtml + "</div>"
-		);
+		modalDots.querySelectorAll(".project-modal-dot").forEach((dot) => {
+			dot.addEventListener("click", () => {
+				activeImageIndex = Number(dot.dataset.index);
+				updateImagePosition();
+			});
+		});
+
+		updateImagePosition();
+		// Force layout so the reset transform above applies before re-enabling
+		// the transition — otherwise the first image would visibly slide in.
+		modalTrack.offsetHeight;
+		modalTrack.style.transition = "";
+
+		certPrevBtn.hidden = projects.length <= 1;
+		certNextBtn.hidden = projects.length <= 1;
 	}
 
-	function metaBlock(label, text, borderless) {
-		return (
-			'<div class="projects-meta-block">' +
-				'<h4 class="projects-meta-label' + (borderless ? " projects-meta-label-plain" : "") + '">' + label + "</h4>" +
-				"<p>" + text + "</p>" +
-			"</div>"
-		);
+	function openModal(index, trigger) {
+		activeItemIndex = index;
+		lastFocused = trigger || document.activeElement;
+		renderProject();
+
+		modal.hidden = false;
+		modal.querySelector(".project-modal-close").focus();
+		document.addEventListener("keydown", onKeydown);
 	}
 
-	function renderDetail(project) {
-		activeImageIndex = 0;
-
-		const tagsHtml = project.tags.map((tag) => '<span class="projects-detail-tag">' + tag + "</span>").join("");
-		const highlightsHtml = project.highlights.map((h) => "<li>" + h + "</li>").join("");
-
-		detail.innerHTML =
-			'<p class="projects-detail-eyebrow">' + project.type + " · " + project.year + "</p>" +
-			'<h1 class="projects-detail-title">' + project.title + "</h1>" +
-			'<p class="projects-detail-summary">' + project.summary + "</p>" +
-			'<div class="projects-detail-tags">' + tagsHtml + "</div>" +
-			'<div id="projectsGalleryWrap">' + renderGallery(project) + "</div>" +
-			'<div class="projects-meta-grid">' +
-				metaBlock("The Problem", project.problem) +
-				metaBlock("Outcome", project.outcome) +
-				metaBlock("The Approach", project.approach) +
-				'<div class="projects-meta-block">' +
-					'<h4 class="projects-meta-label projects-meta-label-plain">Key Highlights</h4>' +
-					'<ul class="projects-meta-list">' + highlightsHtml + "</ul>" +
-				"</div>" +
-			"</div>" +
-			'<div class="projects-detail-links">' +
-				(project.githubUrl ? '<a href="' + project.githubUrl + '" target="_blank" rel="noopener noreferrer" class="projects-detail-link"><i class="bi bi-github"></i>GitHub</a>' : "") +
-				(project.liveUrl ? '<a href="' + project.liveUrl + '" target="_blank" rel="noopener noreferrer" class="projects-detail-link"><i class="bi bi-box-arrow-up-right"></i>Live</a>' : "") +
-			"</div>";
-
-		wireImageFallbacks(project);
-		wireGalleryControls(project);
+	function closeModal() {
+		modal.hidden = true;
+		document.removeEventListener("keydown", onKeydown);
+		if (lastFocused) {
+			lastFocused.focus();
+		}
 	}
 
-	function wireImageFallbacks(project) {
-		const heroImg = detail.querySelector(".projects-gallery-img");
-		const heroPlaceholder = detail.querySelector(".projects-gallery-placeholder");
-		if (heroImg && heroPlaceholder) {
-			attachImageFallback(heroImg, heroPlaceholder);
+	function showPrevImage() {
+		const count = activeItem().images.length;
+		activeImageIndex = (activeImageIndex - 1 + count) % count;
+		updateImagePosition();
+	}
+
+	function showNextImage() {
+		const count = activeItem().images.length;
+		activeImageIndex = (activeImageIndex + 1) % count;
+		updateImagePosition();
+	}
+
+	function showPrevProject() {
+		activeItemIndex = (activeItemIndex - 1 + projects.length) % projects.length;
+		renderProject();
+	}
+
+	function showNextProject() {
+		activeItemIndex = (activeItemIndex + 1) % projects.length;
+		renderProject();
+	}
+
+	function onKeydown(event) {
+		if (event.key === "Escape") {
+			closeModal();
+		} else if (event.key === "ArrowLeft") {
+			showPrevImage();
+		} else if (event.key === "ArrowRight") {
+			showNextImage();
+		}
+	}
+
+	function wireRowThumbnail(thumb) {
+		const project = projects.find((p) => p.slug === thumb.dataset.slug);
+		const img = thumb.querySelector("img");
+		if (!project || !img) {
+			return;
 		}
 
-		detail.querySelectorAll(".projects-thumb").forEach((thumb) => {
-			const img = thumb.querySelector(".projects-thumb-img");
-			const placeholder = thumb.querySelector(".projects-thumb-placeholder");
-			if (img && placeholder) {
-				attachImageFallback(img, placeholder);
+		let attempt = 0;
+		img.addEventListener("error", function onError() {
+			if (attempt < project.images.length) {
+				img.src = imageSrc(project, project.images[attempt]);
+				attempt += 1;
+			} else {
+				img.remove();
+				thumb.classList.add("project-thumb-empty");
 			}
 		});
 	}
 
-	function wireGalleryControls(project) {
-		const wrap = document.getElementById("projectsGalleryWrap");
+	document.querySelectorAll(".project-thumb").forEach(wireRowThumbnail);
 
-		const prevBtn = detail.querySelector(".projects-gallery-prev");
-		if (prevBtn) {
-			prevBtn.addEventListener("click", () => {
-				if (activeImageIndex > 0) {
-					activeImageIndex -= 1;
-					wrap.innerHTML = renderGallery(project);
-					wireImageFallbacks(project);
-					wireGalleryControls(project);
-				}
-			});
-		}
-
-		const nextBtn = detail.querySelector(".projects-gallery-next");
-		if (nextBtn) {
-			nextBtn.addEventListener("click", () => {
-				if (activeImageIndex < project.images.length - 1) {
-					activeImageIndex += 1;
-					wrap.innerHTML = renderGallery(project);
-					wireImageFallbacks(project);
-					wireGalleryControls(project);
-				}
-			});
-		}
-
-		detail.querySelectorAll(".projects-thumb").forEach((thumb) => {
-			thumb.addEventListener("click", () => {
-				activeImageIndex = Number(thumb.dataset.index);
-				wrap.innerHTML = renderGallery(project);
-				wireImageFallbacks(project);
-				wireGalleryControls(project);
-			});
+	document.querySelectorAll(".project-thumb, .project-title-btn").forEach((trigger) => {
+		trigger.addEventListener("click", () => {
+			const index = projects.findIndex((p) => p.slug === trigger.dataset.slug);
+			if (index >= 0) {
+				openModal(index, trigger);
+			}
 		});
-	}
+	});
 
-	function selectProject(slug) {
-		const project = projects.find((p) => p.slug === slug);
-		if (!project) {
+	modal.querySelectorAll("[data-close]").forEach((el) => {
+		el.addEventListener("click", closeModal);
+	});
+
+	modal.querySelector(".project-modal-panel").addEventListener("click", (event) => {
+		event.stopPropagation();
+	});
+
+	prevBtn.addEventListener("click", showPrevImage);
+	nextBtn.addEventListener("click", showNextImage);
+	certPrevBtn.addEventListener("click", showPrevProject);
+	certNextBtn.addEventListener("click", showNextProject);
+
+	const frame = modal.querySelector(".project-modal-frame");
+	let touchStartX = 0;
+	let touchStartY = 0;
+
+	frame.addEventListener("touchstart", (event) => {
+		touchStartX = event.touches[0].clientX;
+		touchStartY = event.touches[0].clientY;
+	}, { passive: true });
+
+	frame.addEventListener("touchend", (event) => {
+		const dx = event.changedTouches[0].clientX - touchStartX;
+		const dy = event.changedTouches[0].clientY - touchStartY;
+
+		if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) {
 			return;
 		}
 
-		navItems.forEach((item) => {
-			const isActive = item.dataset.slug === slug;
-			item.classList.toggle("is-active", isActive);
-			item.setAttribute("aria-pressed", isActive ? "true" : "false");
-		});
-
-		renderDetail(project);
-	}
-
-	navItems.forEach((item) => {
-		item.addEventListener("click", () => selectProject(item.dataset.slug));
-	});
-
-	selectProject(projects[0].slug);
+		if (dx < 0) {
+			showNextImage();
+		} else {
+			showPrevImage();
+		}
+	}, { passive: true });
 });

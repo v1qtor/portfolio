@@ -1,26 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
+	const carousel = document.querySelector(".hobby-carousel");
+	const track = document.querySelector(".hobby-track");
 	const panels = document.querySelectorAll(".hobby-panel");
 	const dots = document.querySelectorAll(".hobby-dot");
 
-	if (!panels.length || !dots.length) {
+	if (!panels.length || !dots.length || !track) {
 		return;
 	}
 
-	dots.forEach((dot) => {
-		dot.addEventListener("click", () => {
-			const target = dot.dataset.target;
+	const order = [...panels].map((panel) => panel.dataset.hobby);
+	let activeIndex = order.indexOf(document.querySelector(".hobby-panel.is-active").dataset.hobby);
+	if (activeIndex < 0) {
+		activeIndex = 0;
+	}
 
-			panels.forEach((panel) => {
-				panel.classList.toggle("is-active", panel.dataset.hobby === target);
-			});
+	function showHobby(target) {
+		const index = order.indexOf(target);
+		if (index < 0) {
+			return;
+		}
+		activeIndex = index;
+		track.style.transform = "translateX(-" + index * 100 + "%)";
 
-			dots.forEach((item) => {
-				const isActive = item === dot;
-				item.classList.toggle("is-active", isActive);
-				item.setAttribute("aria-selected", isActive ? "true" : "false");
-			});
+		panels.forEach((panel) => {
+			panel.classList.toggle("is-active", panel.dataset.hobby === target);
 		});
+		dots.forEach((dot) => {
+			const isActive = dot.dataset.target === target;
+			dot.classList.toggle("is-active", isActive);
+			dot.setAttribute("aria-selected", isActive ? "true" : "false");
+		});
+	}
+
+	function showByOffset(offset) {
+		const next = (activeIndex + offset + order.length) % order.length;
+		showHobby(order[next]);
+	}
+
+	dots.forEach((dot) => {
+		dot.addEventListener("click", () => showHobby(dot.dataset.target));
 	});
+
+	if (carousel) {
+		let touchStartX = 0;
+		let touchStartY = 0;
+
+		carousel.addEventListener("touchstart", (event) => {
+			touchStartX = event.touches[0].clientX;
+			touchStartY = event.touches[0].clientY;
+		}, { passive: true });
+
+		carousel.addEventListener("touchend", (event) => {
+			const dx = event.changedTouches[0].clientX - touchStartX;
+			const dy = event.changedTouches[0].clientY - touchStartY;
+
+			if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) {
+				return;
+			}
+
+			showByOffset(dx < 0 ? 1 : -1);
+		}, { passive: true });
+	}
 
 	initResumePreview();
 });

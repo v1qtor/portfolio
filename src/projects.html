@@ -1,5 +1,6 @@
 ---
 title: Projects
+description: A selection of Victor Chukwuma's academic and personal projects spanning data analysis, machine learning, AI tooling, and software engineering.
 activeNav: projects
 pageCdnCss:
   - https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css
@@ -9,29 +10,62 @@ pageScripts:
   - /assets/js/projects.js
 layout: layouts/base.njk
 ---
-<main class="content-page projects-page">
-	<div class="projects-split">
-		<nav class="projects-nav" aria-label="Select a project">
-			<p class="projects-nav-eyebrow">// Selected Work</p>
-			<h2 class="projects-nav-title">Projects</h2>
-			<div class="projects-nav-list">
-				{% for p in projects %}
-				<button type="button" class="projects-nav-item{% if loop.first %} is-active{% endif %}" data-slug="{{ p.slug }}" aria-pressed="{% if loop.first %}true{% else %}false{% endif %}">
-					<div class="projects-nav-item-top">
-						<span class="projects-nav-index">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
-						<span class="projects-nav-year">{{ p.year }}</span>
-					</div>
-					<h3 class="projects-nav-item-title" title="{{ p.title }}">{{ p.title }}</h3>
-					<p class="projects-nav-item-type">{{ p.type }}</p>
-					<div class="projects-nav-dots">
-						{% for img in p.images %}{% if loop.index <= 4 %}<span class="projects-dot projects-dot-{{ img.kind }}"></span>{% endif %}{% endfor %}
-					</div>
-				</button>
-				{% endfor %}
-			</div>
-		</nav>
+<main class="content-page">
+	<div class="projects-content">
+		<header class="page-header">
+			<h2>// Projects</h2>
+			<p>A selection of academic and personal projects spanning data analysis, machine learning, AI tooling, and software engineering.</p>
+		</header>
 
-		<div class="projects-detail" id="projectsDetail"></div>
+		<div class="project-list">
+			{% for p in projects %}
+			<article class="project-row">
+				<button type="button" class="project-thumb" data-slug="{{ p.slug }}" aria-label="View full details for {{ p.title }}">
+					<img src="/assets/images/projects/{{ p.slug }}/{{ p.thumbnail }}" alt="" />
+					<span class="project-thumb-overlay"><i class="bi bi-arrows-angle-expand"></i></span>
+				</button>
+				<div class="project-row-body">
+					<p class="project-eyebrow">{{ p.type }} &mdash; {{ p.year }}</p>
+					<button type="button" class="project-title-btn" data-slug="{{ p.slug }}">
+						<h3 class="project-title">{{ p.title }}</h3>
+					</button>
+					<p class="project-summary">{{ p.summary }}</p>
+					<div class="project-tags">
+						{% for t in p.tags %}<span class="project-tag">{{ t }}</span>{% endfor %}
+					</div>
+					<div class="project-links">
+						{% if p.githubUrl %}<a href="{{ p.githubUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-github"></i>GitHub</a>{% endif %}
+						{% if p.liveUrl %}<a href="{{ p.liveUrl }}" target="_blank" rel="noopener noreferrer" class="project-link"><i class="bi bi-box-arrow-up-right"></i>Live</a>{% endif %}
+					</div>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div id="projectModal" class="project-modal" hidden>
+		<div class="project-modal-backdrop" data-close></div>
+		<button type="button" class="project-modal-cert-nav project-modal-cert-prev" aria-label="Previous project"><i class="bi bi-chevron-left"></i></button>
+		<button type="button" class="project-modal-cert-nav project-modal-cert-next" aria-label="Next project"><i class="bi bi-chevron-right"></i></button>
+		<div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+			<button type="button" class="project-modal-close" data-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
+			<div class="project-modal-media">
+				<div class="project-modal-frame">
+					<button type="button" class="project-modal-nav project-modal-prev" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
+					<div class="project-modal-track" id="projectModalTrack"></div>
+					<button type="button" class="project-modal-nav project-modal-next" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+				</div>
+				<p class="project-modal-caption" id="projectModalCaption"></p>
+				<div class="project-modal-dots" id="projectModalDots"></div>
+			</div>
+			<div class="project-modal-text">
+				<p class="project-eyebrow" id="projectModalEyebrow"></p>
+				<h3 class="project-title" id="projectModalTitle"></h3>
+				<div class="project-modal-tags" id="projectModalTags"></div>
+				<div class="project-modal-links" id="projectModalLinks"></div>
+				<div class="project-modal-body" id="projectModalBody"></div>
+			</div>
+		</div>
 	</div>
 
 	<script type="application/json" id="projectsData">{{ projects | dump | safe }}</script>
