@@ -30,6 +30,34 @@
 		"demoCredentials": "Demo Admin: laurien@andersons.com / password"
 	},
 	{
+		"slug": "motogp",
+		"type": "Full-Stack Web Development",
+		"title": "MotoGP Tickets",
+		"year": "2026",
+		"summary": "A course project built for my .NET Development course — a layered ASP.NET Core Web API and a React frontend for browsing MotoGP races and booking tickets.",
+		"tags": ["ASP.NET Core", "Entity Framework Core", "SQL Server", "AutoMapper", "Auth0", "MSTest", "React", "Vite"],
+		"thumbnail": "thumbnail.png",
+		"problem": "This was a course project for my <strong>.NET Development course</strong>, built to practice a properly layered ASP.NET Core API rather than a single monolithic project — separating contracts, domain logic, and infrastructure so each layer could be tested and changed independently, with a real React frontend consuming it.",
+		"approach": "Structured the API into <strong>four layers</strong>: <code>MotoGP.Api</code> (controllers, AutoMapper profiles, Program.cs), <code>MotoGP.Contracts</code> (DTOs only), <code>MotoGP.Domain</code> (POCO entities, pagination helper, Strategy-pattern interfaces), and <code>MotoGP.Infrastructure</code> (EF Core DbContext, migrations, Repositories, seeders) — following the <strong>Repository pattern</strong> throughout. Used <strong>Auth0 JWT</strong> auth to gate admin-only endpoints (listing all tickets, marking a ticket paid) while keeping ticket ordering public. Documented every endpoint via <strong>Swagger</strong>, and covered all four layers with <strong>MSTest</strong> unit tests using Moq. Built a separate <strong>React + Vite</strong> client that talks to the API over Axios, with the API base URL driven by an environment variable so it can point at either a local or deployed API.",
+		"outcome": "Delivered a working end-to-end booking flow — browsing races and placing a ticket order — backed by a SQL Server database that migrates and seeds automatically on first run, with a full MSTest suite passing across all layers.",
+		"highlights": [
+			"<strong>Course Project:</strong> Built for my .NET Development course.",
+			"<strong>4-Layer Architecture:</strong> Api, Contracts, Domain, and Infrastructure layers kept strictly separated via the Repository pattern.",
+			"<strong>Auth0 JWT:</strong> Admin-only endpoints gated behind token auth while order placement stays public.",
+			"<strong>Tested:</strong> MSTest + Moq unit tests across all four layers, all passing.",
+			"<strong>Decoupled Frontend:</strong> React/Vite client talking to the API over Axios, independently deployable."
+		],
+		"images": [
+			{ "file": "1.png", "kind": "screenshot", "caption": "Swagger — the API's documented endpoints" },
+			{ "file": "2.png", "kind": "diagram", "caption": "The four layers — Api, Contracts, Domain, Infrastructure" },
+			{ "file": "3.png", "kind": "diagram", "caption": "Database model" },
+			{ "file": "4.png", "kind": "screenshot", "caption": "MSTest results — all tests passing" },
+			{ "file": "5.png", "kind": "screenshot", "caption": "The React ticket screen — the front-end this API connects to" }
+		],
+		"githubUrl": "https://github.com/v1qtor/motogp-tickets",
+		"liveUrl": null
+	},
+	{
 		"slug": "cycling",
 		"type": "Web Scraping / Data Engineering",
 		"title": "Pro Cycling WorldTour Stage Analytics",
